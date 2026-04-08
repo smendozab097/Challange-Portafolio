@@ -1,0 +1,197 @@
+/* --- Variables Neobrutalistas --- */
+:root {
+    --bg-color: #f0f0f0;
+    --primary-color: #ff5c00; /* Naranja vibrante */
+    --secondary-color: #00e5ff; /* Cian */
+    --accent-color: #ffff00; /* Amarillo */
+    --text-color: #000000;
+    --border-width: 4px;
+    --shadow-offset: 6px;
+}
+
+/* --- Estilos Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 10px;
+}
+
+h1, h2, h3 {
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+/* --- Contenedores con Estilo Neobrutalista --- */
+section, .nav_item, .habilidades__elemento, .aficiones__elemento, .proyectos__contenedor, .contacto__campo {
+    background: #fff;
+    border: var(--border-width) solid var(--text-color);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px 0px var(--text-color);
+    margin-bottom: 30px;
+    padding: 20px;
+    transition: transform 0.2s;
+}
+
+/* --- Header y Navegación --- */
+.cabecera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.cabecera__logo {
+    width: 60px;
+    border: var(--border-width) solid var(--text-color);
+}
+
+.navegacion__lista {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nav_item {
+    padding: 8px 15px;
+    margin-bottom: 5px; /* Ajuste para mobile */
+}
+
+.nav_item a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+/* --- Sección Presentación --- */
+.presentacion {
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.presentacion__foto {
+    width: 150px;
+    border-radius: 50%;
+    border: var(--border-width) solid var(--text-color);
+    margin-bottom: 20px;
+}
+
+.redes {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.redes__img a {
+    background: var(--accent-color);
+    padding: 5px 10px;
+    border: 2px solid #000;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    box-shadow: 3px 3px 0px #000;
+}
+
+/* --- Habilidades y Aficiones (Grids) --- */
+.habilidades__lista, .aficiones__lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    list-style: none;
+}
+
+.habilidades__elemento, .aficiones__elemento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--secondary-color);
+    margin-bottom: 0; /* Reset para el grid */
+}
+
+.habilidades__icono, .aficiones__icono {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+/* --- Proyectos --- */
+.proyectos__contenedor {
+    background: #fff;
+}
+
+.proyectos__nombre {
+    background: var(--accent-color);
+    display: inline-block;
+    padding: 5px 10px;
+    border: 2px solid #000;
+    margin-bottom: 15px;
+}
+
+.proyectos img {
+    width: 100%;
+    border: var(--border-width) solid #000;
+    margin-top: 15px;
+}
+
+/* --- Formulario de Contacto --- */
+.contacto__formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contacto__campo {
+    width: 100%;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.contacto__boton {
+    background: var(--primary-color);
+    border: var(--border-width) solid #000;
+    padding: 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px 0px var(--text-color);
+}
+
+.contacto__boton:active {
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0px #000;
+}
+
+/* --- Desktop Adaptations --- */
+@media (min-width: 768px) {
+    body {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px;
+    }
+
+    .presentacion {
+        flex-direction: row;
+        text-align: left;
+        gap: 40px;
+        padding: 40px;
+    }
+
+    .cabecera {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
