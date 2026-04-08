@@ -52,7 +52,7 @@ a {
 .cabecera__logo {
     max-width: 2.2rem;
     width: 1.9rem; 
-    /*height: auto;*/
+
     margin-left: 1rem;
 
 }
@@ -80,16 +80,16 @@ a {
     gap: 20px; /* Espaciado uniforme entre los elementos de la lista */
 }
 
-.navegacion__elemento:not(:last-child) { 
+.nav_item:not(:last-child) { 
     display: none; /* Ocultar todos los otros elementos de navegación */ 
 }
 
 
-.navegacion__elemento a {
+.nav_item a {
     font-size: 0.9rem;
     
 }
-.navegacion__elemento a:hover {
+.nav_item a:hover {
     color: #1abc9c; /* Cambia el color al pasar el mouse */
   }
 
@@ -529,7 +529,7 @@ input:focus, textarea:focus {
         margin-top: 0;
     }
 
-    .navegacion__elemento a {
+    .nav_item a {
         font-size: 1rem;
     }
 
@@ -703,11 +703,11 @@ input:focus, textarea:focus {
     }
 
     /* Mostrar todos los elementos de la lista */
-  .navegacion__elemento:not(:last-child) {
+  .nav_item:not(:last-child) {
     display: flex; /* Asegura que todos los elementos sean visibles */
   }
 
-    .navegacion__elemento a {
+    .nav_item a {
         font-size: 1.1rem;
     }
 
