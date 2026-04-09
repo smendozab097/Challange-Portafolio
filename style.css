@@ -1,6 +1,10 @@
-/* Este repositório base fué creado para ayudarte en caso que no sepas como comenzar, recuerda que el portafolio es tu carta de presentación 
-y debes darle tu cara, por eso te invitamos a personalizarlo según tu estilo y preferencias no te limites apenas al layout propuesto en figma  */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 :root {
     --color-fondo-oscuro: #050510; /* Un azul casi negro */
@@ -115,21 +119,19 @@ body {
 
 .cabecera {
     width: 100%;
-    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0rem;
+    padding: 0.5rem 1rem 0rem 1rem; /*arriba, derecha, abajo, izquierda*/
     background-color: var(--color-de-fondo-menu);
+    /*border-bottom: 1px solid #464646;*/
+    box-shadow: #00d2ff 0px 0px 5px;
 }
 
 .cabecera__logo {
     max-width: 2.2rem;
     width: 1.9rem; 
-
-    margin-left: 1rem;
-
 }
 
 .cabecera__titulo {
@@ -177,48 +179,54 @@ body {
     justify-content: space-between;
     margin: 1rem;
 }
-
-.presentacion__foto {
-    width: 9rem;
-    height: 9rem;
-}
-
-
-
 .presentacion__titulo {
-    
     font-family: var(--raleway-font);
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2.2rem;
     color: var(--color-font);
-    margin: 0%;
 }
-
 .presentacion__subtitulo {
     font-family: var(--raleway-font);
-    font-size: 1.1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-style: italic;
     color: var(--color-font);
-    align-self: justify;
 }
 .presentacion__contenedor { 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-   /* gap: 0.5rem;*/
-    margin-top: 0.2rem;
+    overflow: auto; /* Esto hace que el padre "abrace" a sus hijos flotantes */
+    margin: 1rem 0rem 1rem 0rem; /*arriba, derecha, abajo, izquierda*/
 }
+.presentacion__foto {
+    width: 10rem;
+    height: 10rem;
+    float: right; /* Hace que la imagen flote a la derecha y el texto se ajuste a su alrededor. Se bloqquea si el padre define display: flex; */
+    shape-outside: circle(50%);
+    shape-margin: 1px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 1.8rem;
+}
+.presentacion__parrafo {
+    font-family: var(--raleway-font);
+    font-size: 1rem;
+    color: var(--color-font);
+    text-align: justify;
+    line-height: 1.6;
+}
+
 
 .redes { 
-    max-width: 20rem;
+    max-width: 15rem;
     display: flex;
-    flex-direction: row;
-    column-gap: 0rem;
-    padding-left: 0rem;
-    margin-bottom: 1rem;
-    justify-items: flex-start;
-    
-}
+    justify-content: space-between;
 
+}
+.redes__img {
+    width: 1.5rem;
+    height: auto;
+    object-fit: contain;
+    margin-right: 0.3rem;
+}
 .redes a {  
     color: var(--color-font);
     font-family: var(--raleway-font);
@@ -592,12 +600,42 @@ input:focus, textarea:focus {
     .presentacion {
         flex-direction: row-reverse;
         justify-content: space-between;
+        align-items: center;
     }
 
     .presentacion__foto {
-        width: 146px;
-        height: 146px;
+        width: 16rem;
+        height: 16rem;
         border-radius: 50%;
+    }
+
+    .presentacion__titulo {
+    font-family: var(--raleway-font);
+    font-weight: bold;
+    font-size: 5rem;
+    color: var(--color-font);
+    }
+    .presentacion__subtitulo {
+        font-family: var(--raleway-font);
+        font-weight: bold;
+        font-size: 2rem;
+        font-style: italic;
+        color: var(--color-font);
+    }
+
+    .presentacion__parrafo {
+        font-family: var(--raleway-font);
+        font-size: 1.1rem;
+        color: var(--color-font);
+        align-self: justify;
+        margin: 1rem 3rem 1rem 0rem; /*arriba, derecha, abajo, izquierda*/
+
+    }
+    .presentacion__contenedor { 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 0.2rem;
     }
 
     /*---------------- Habilidades ----------------*/
@@ -781,8 +819,8 @@ input:focus, textarea:focus {
     }
     
     .presentacion__foto {
-        width: 368px;
-        height: auto;
+        width: 23rem;
+        height: 23rem;
         border-radius: 50%;
     }
 
