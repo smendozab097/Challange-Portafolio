@@ -1,27 +1,26 @@
-/* Este repositório base fué creado para ayudarte en caso que no sepas como comenzar, recuerda que el portafolio es tu carta de presentación y debes darle tu cara, por eso te invitamos a personalizarlo según tu estilo y preferencias no te limites apenas al layout propuesto en figma  
-*/
+/* Este repositório base fué creado para ayudarte en caso que no sepas como comenzar, recuerda que el portafolio es tu carta de presentación 
+y debes darle tu cara, por eso te invitamos a personalizarlo según tu estilo y preferencias no te limites apenas al layout propuesto en figma  */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --color-de-fondo: #F5F5F5;
-    --color-de-fondo-menu: #ffffff;
-    --color-de-link: #000000;
-    --color-fondo-intercalado: #cce0fd;
-    --raleway-font: 'Raleway', sans-serif;
-    --color-font: #464646;
+    --color-fondo-oscuro: #050510; /* Un azul casi negro */
+    --color-neon-azul: #00d2ff;
+    --color-neon-purpura: #9d50bb;
+    --glass-bg: rgba(255, 255, 255, 0.05); /* Blanco con mucha transparencia */
+    --glass-border: rgba(255, 255, 255, 0.1);
 }
-html {
-    margin: 0%;
-}
+
 body {
-    background-color: var(--color-de-fondo);
-    font-family: var(--raleway-font);
-    margin: 0;
-    overflow-x: hidden;
-    box-sizing: border-box;
-    padding: 0;
-    line-height: 1.6;
-    color: var(--color-font);
+    background-color: var(--color-fondo-oscuro);
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(157, 80, 187, 0.15) 0%, transparent 40%);
+    background-attachment: fixed; /* Para que las luces no se muevan al hacer scroll */
+    color: white; /* Para que resalte sobre el fondo oscuro */
+    font-family: 'Raleway', sans-serif;
+    min-height: 100vh;
+    /* Aquí añadiremos los gradientes más adelante */
+    
 }
 
 ol, ul, li {
@@ -33,6 +32,82 @@ a {
     color: var(--color-de-link);
 }
 
+.glass-card {
+    background: rgba(255, 255, 255, 0.03); /* Un toque de blanco casi invisible */
+    backdrop-filter: blur(12px); /* El esmerilado del cristal */
+    -webkit-backdrop-filter: blur(12px); /* Soporte para Safari */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* El borde fino */
+    border-radius: 15px; /* Bordes suaves */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Sombra para dar profundidad */
+    transition: all 0.3s ease; /* Como un amortiguador que suaviza cualquier cambio */
+}
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.08); /* Se vuelve un poco más opaco */
+    border-color: var(--color-neon-azul);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+}
+
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000; /* Siempre por encima de todo el chasis */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Oscurece el fondo */
+    backdrop-filter: blur(8px); /* Desenfoque extra para el fondo */
+    justify-content: center;
+    align-items: center;
+}
+
+/* El contenedor del contenido (tu glass-card) */
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto; /* Si el texto es largo, permite scroll interno */
+    padding: 2.5rem;
+    animation: slideIn 0.4s ease-out; /* Animación de entrada */
+}
+
+/* El botón de cerrar (la X) */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--color-neon-azul);
+    cursor: pointer;
+}
+
+/* Animación para que el modal no aparezca de golpe */
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/*
+:root {
+    --color-de-fondo: #F5F5F5;
+    --color-de-fondo-menu: #ffffff;
+    --color-de-link: #000000;
+    --color-fondo-intercalado: #cce0fd;
+    --raleway-font: 'Raleway', sans-serif;
+    --color-font: #464646;
+}
+
+body {
+    background-color: var(--color-de-fondo);
+    font-family: var(--raleway-font);
+    margin: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--color-font);
+}*/
 
 
 /* ------------------------------ Sección Menú -------------------------------*/
@@ -217,11 +292,9 @@ a {
     font-weight: bold;
     font-size: 1.2rem;
     color: var(--color-font);
-    background-color: var(--color-de-fondo-menu);
     width: 6rem;
     padding: 2rem 2rem 0rem 1.5rem; /*arriba, derecha, abajo, izquierda*/
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .habilidades__elemento img {
@@ -231,26 +304,6 @@ a {
     align-self: flex-start;
     margin-bottom: 0rem;
 }
-
-/*.habilidades__elemento{
-    display: flex;
-    flex-flow: wrap column;
-    font-weight: bold;
-    font-size: 1.4rem;
-    color: var(--color-font);
-    background-color: var(--color-de-fondo-menu);
-    width: 10rem;
-    padding: 2rem 2rem 0rem 1.5rem; /*arriba, derecha, abajo, izquierda*/
-    /*border-radius: 2px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-
-.habilidades__elemento p{
-    margin-top: 0.3rem;
-    color: var(--color-font);
-}*/
-
 
 
 /*------------------------------ Sección de Aficiones --------------------------------*/
@@ -280,11 +333,10 @@ a {
     flex-flow: wrap column;
     font-weight: bold;
     font-size: 1.2rem;
-    background-color: var(--color-de-fondo-menu);
     width: 6rem;
     padding: 2rem 2rem 0rem 1.5rem; 
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
 }
 .aficiones__elemento img {
     width: 3rem;
@@ -293,19 +345,6 @@ a {
     align-self: flex-start;
     margin-bottom: 0rem;
 }
-/*.aficiones__elemento{
-    display: flex;
-    flex-flow: wrap column;
-    font-weight: bold;
-    font-size: 1.4rem;
-    color: var(--color-font);
-    background-color: var(--color-de-fondo-menu);
-    width: 10rem;
-    padding: 2rem 2rem 0rem 1.5rem; 
-    border-radius: 2px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-*/
 
 
 
@@ -336,6 +375,7 @@ a {
 }
 .formacion__elemento{ /* Contiene la imagen, nombre y detalle de la formación separado en dos divs, uno para la imagen y otro que contiene los textos */
     max-width: 19rem;
+
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -343,7 +383,7 @@ a {
     font-weight: bold;
     font-size: 1.1rem;
     color: var(--color-font);  
-    padding: 0rem 0rem 0rem 0rem; /*arriba, derecha, abajo, izquierda*/
+    padding: 0rem 0rem 2rem 0rem; /*arriba, derecha, abajo, izquierda*/
     border-radius: 2px;
     /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);*/
 }
@@ -357,7 +397,6 @@ a {
     justify-content: center;
     margin-bottom: 0rem;
     margin-top: 0rem;
-    background-color: var(--color-de-fondo-menu);
 }
 .formacion__elemento img {
     width: auto;
@@ -404,6 +443,21 @@ a {
     gap: 1rem;
     padding: 0rem;
 }
+.proyectos__contenedor {
+    display: flex; /* Alineamos contenido en línea */
+    flex-direction: column; /* Por defecto en móvil, uno bajo otro */
+    gap: 2rem;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.proyectos__contenedor:hover {
+    transform: translateY(-10px);
+    border: 1px solid var(--color-neon-azul);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
+}
+
 .contenedor__detalles {
     display: flex;
     flex-direction: row-reverse;
@@ -618,6 +672,13 @@ input:focus, textarea:focus {
     .formacion__detalle{
         max-width: 100%;
         box-sizing: border-box;
+    }
+
+    /*---------------- Proyectos ----------------*/    
+
+    .proyectos__contenedor {
+        flex-direction: row; /* Imagen y texto lado a lado */
+        text-align: left;
     }
 
     /*---------------- Formulario Contacto ----------------*/
