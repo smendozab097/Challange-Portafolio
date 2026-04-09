@@ -1,0 +1,261 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-de-fondo: #f5f7fa;
+    --color-de-fondo-menu: #01303a;
+    --color-de-link: #000000;
+    --color-fondo-intercalado: #cce0fd;
+    --raleway-font: 'Raleway', sans-serif;
+    --color-font: #464646;
+}
+
+body {
+    background-color: var(--color-de-fondo);
+    font-family: var(--raleway-font);
+    margin: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--color-font);
+}
+ol, ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-de-link);
+}
+
+
+/* ------------------------------ Mobile First -------------------------------*/
+
+/* ------------------------------ Sección Menú -------------------------------*/
+
+.cabecera {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    background-color: var(--color-de-fondo-menu);
+    color: #cce0fd;
+    border-bottom: 2px solid #464646;
+
+}
+.cabecera__logo {
+    max-width: 2.2rem;
+    width: 1.9rem; 
+}
+.cabecera__titulo {
+    font-family: var(--raleway-font);
+    font-weight: bold;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    text-align: center;
+    padding: 10px
+}
+
+.menu__toggle{
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #cce0fd;
+    cursor: pointer;
+}
+
+.navegacion {
+    margin-left: auto;
+    
+    display: none; /* Ocultar la navegación en pantallas pequeñas */
+}
+
+.navegacion__lista {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Espaciado uniforme entre los elementos de la lista */
+}
+
+.nav_item a {
+    font-size: 0.9rem;
+    color: #cce0fd;
+    
+}
+.nav_item a:hover {
+    color: #1abc9c; /* Cambia el color al pasar el mouse */
+}
+
+/* ------------------------------ Sección Presentación ------------------------------*/
+
+.presentacion {
+    display: flex;
+    /*flex-direction: column;*/
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+}
+
+.prueba{
+   display: flex; 
+   align-items: center;
+}
+
+.presentacion__foto {
+    width: 11rem;
+    height: 11rem;
+    float: right;
+    shape-outside: url(assets/profile.png);
+    clip-path: circle(50%);
+    shape-margin: 8px;
+    object-fit: cover;
+}
+
+.presentacion__titulo {
+    
+    font-family: var(--raleway-font);
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--color-font);
+    margin: 0%;
+}
+
+.presentacion__subtitulo {
+    font-family: var(--raleway-font);
+    font-size: 1.1rem;
+    color: var(--color-font);
+    align-self: justify;
+}
+.presentacion__contenedor { 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+   /* gap: 0.5rem;*/
+    margin-top: 0.2rem;
+}
+
+.redes { 
+    max-width: 20rem;
+    display: flex;
+    flex-direction: row;
+    column-gap: 0rem;
+    padding-left: 0rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    justify-items: flex-start;
+    
+}
+
+.redes a {  
+    color: var(--color-font);
+    font-family: var(--raleway-font);
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin: 0.2rem;
+    padding: 0%;
+    flex-direction: row;
+    gap: 0rem;
+}
+.redes a:hover {
+    color: #1abc9c; /* Cambia el color al pasar el mouse */
+
+}
+
+/* ------------------------------ Sección sobre mí ----------------------------------*/
+.sobre-mi{
+    /*background-color: var(--color-fondo-intercalado);*/
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.sobre-mi__titulo{
+    font-family: var(--raleway-font);
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: var(--color-font);
+    margin-top: 0.3rem;
+}
+
+.sobre-mi__texto{
+    align-self: justify;
+    margin-top: 0.5rem;
+    
+}
+
+.sobre-mi img{
+    width: 10rem;
+    height: auto;
+}
+
+
+
+/*------------------------------ Sección de Habilidades ------------------------------*/
+
+
+/* ------------------------------ Responsividad ---------------------------------------*/
+
+
+
+/* Tablets y pantallas más grandes */
+@media (min-width: 768px) {
+
+    /*---------------- Cabecera ----------------*/
+    .cabecera {
+        flex-direction: row;
+        width: 100%;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .cabecera__logo {
+        max-width: 100px;
+    }
+
+    .cabecera__titulo {
+        font-size: 1.5rem;
+    }
+
+    /*   -------   Navegación Menú   -------   */
+
+    .menu__toggle{
+        display: none;
+    }
+
+    .navegacion{
+        display: flex;
+        margin-right: 20px ;
+    }
+
+    .navegacion__lista {
+        display:flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 0;
+    }
+
+    .nav_item a {
+        font-size: 1rem;
+    }
+
+    /*---------------- Presentacion ----------------*/
+
+    .presentacion {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .presentacion__foto {
+        width: 146px;
+        height: 146px;
+        border-radius: 50%;
+    }
+
+}

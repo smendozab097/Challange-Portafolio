@@ -1,7 +1,11 @@
 /* Este repositório base fué creado para ayudarte en caso que no sepas como comenzar, recuerda que el portafolio es tu carta de presentación y debes darle tu cara, por eso te invitamos a personalizarlo según tu estilo y preferencias no te limites apenas al layout propuesto en figma  
 */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
+/**{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}*/
 :root {
     --color-de-fondo: #F5F5F5;
     --color-de-fondo-menu: #ffffff;
@@ -64,6 +68,7 @@ a {
     color: var(--color-font);
     margin-left: 0.5rem;
     text-align: center;
+    padding: 10px
 }
 
 /*   -------   Navegación Menú   -------   */
@@ -231,27 +236,6 @@ a {
     align-self: flex-start;
     margin-bottom: 0rem;
 }
-
-/*.habilidades__elemento{
-    display: flex;
-    flex-flow: wrap column;
-    font-weight: bold;
-    font-size: 1.4rem;
-    color: var(--color-font);
-    background-color: var(--color-de-fondo-menu);
-    width: 10rem;
-    padding: 2rem 2rem 0rem 1.5rem; /*arriba, derecha, abajo, izquierda*/
-    /*border-radius: 2px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-
-.habilidades__elemento p{
-    margin-top: 0.3rem;
-    color: var(--color-font);
-}*/
-
-
 
 /*------------------------------ Sección de Aficiones --------------------------------*/
 .aficiones{
@@ -675,6 +659,7 @@ input:focus, textarea:focus {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        padding: 0;
     }
 
     .cabecera__logo {
