@@ -1,12 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('./modal.css');
-@import url('./header.css');
-@import url('./landing.css');
-@import url('./aboutMe.css');
-@import url('./skills.css');
-@import url('./projects.css');
-@import url('./contactMe.css');
-
 
 *{
     padding: 0;
@@ -18,7 +10,7 @@
     --color-fondo-oscuro: #050510e4; /* Un azul casi negro */
     --color-neon-azul: #00d2ff;
     --color-neon-purpura: #9d50bb;
-    --glass-bg: rgba(255, 255, 255, 0.05); /*transparencia de fondo*/
+    --glass-bg: rgba(255, 255, 255, 0.05); /* Blanco con mucha transparencia */
     --glass-border: rgba(255, 255, 255, 0.1);
     --color-font: #e2e2e2;
 }
@@ -60,6 +52,235 @@ a {
     box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
 }
 
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000; /* Siempre por encima de todo el chasis */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Oscurece el fondo */
+    backdrop-filter: blur(8px); /* Desenfoque extra para el fondo */
+    justify-content: center;
+    align-items: center;
+}
+
+/* El contenedor del contenido (tu glass-card) */
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto; /* Si el texto es largo, permite scroll interno */
+    padding: 2.5rem;
+    animation: slideIn 0.4s ease-out; /* Animación de entrada */
+}
+
+/* El botón de cerrar (la X) */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--color-neon-azul);
+    cursor: pointer;
+}
+
+/* Animación para que el modal no aparezca de golpe */
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ------------------------------ Sección Menú -------------------------------*/
+
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 1rem; /*arriba-abajo, derecha-izquierda*/
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+/* para hacer que el header se mantenga fijo en la parte superior */
+/*version sticky*/
+    position: sticky;
+    top: 0; 
+    z-index: 1000;
+}
+
+.header__icon {
+    width: auto;
+    height: 1.5rem;
+    object-fit: contain;
+    fill: url(#gradienteFirma);
+}
+
+.header__titulo {
+    font-family: var(--raleway-font);
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--color-font);
+    margin-left: 0.5rem;
+    text-align: center;
+}
+
+/*   -------   Navegación Menú   -------   */
+.navegacion {
+    margin-left: auto;
+    display: none; /* Ocultar la navegación en pantallas pequeñas */
+}
+
+.navegacion__lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.3rem; /* Espaciado uniforme entre los elementos de la lista */
+}
+.nav_item a {
+    font-size: 0.7rem;
+    
+}
+.nav_item a:hover {
+    color: #1abc9c; /* Cambia el color al pasar el mouse */
+  }
+
+.menu__toggle{
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #cce0fd;
+    cursor: pointer;
+}
+
+/* ------------------------------ Sección Presentación ------------------------------*/
+.presentacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 2rem;
+}
+.presentacion__titulo {
+    font-family: var(--raleway-font);
+    font-weight: bold;
+    font-size: 2.2rem;
+    color: var(--color-font);
+}
+.presentacion__subtitulo {
+    font-family: var(--raleway-font);
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--color-font);
+}
+.presentacion__contenedor { 
+    overflow: auto; /* Esto hace que el padre "abrace" a sus hijos flotantes */
+    margin: 1rem 0rem 1rem 0rem; /*arriba, derecha, abajo, izquierda*/
+}
+.presentacion__foto {
+    width: 13rem;
+    height: 13rem;
+    float: right; /* Hace que la imagen flote a la derecha y el texto se ajuste a su alrededor. Se bloqquea si el padre define display: flex; */
+    shape-outside: circle(50%);
+    shape-margin: 1px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 30%;
+    margin-top: 0.5rem;
+    margin-left: 1.8rem;
+}
+.presentacion__parrafo {
+    font-family: var(--raleway-font);
+    font-size: 0.8rem;
+    color: var(--color-font);
+    text-align: justify;
+    line-height: 1.6;
+}
+
+
+.redes { 
+    max-width: 15rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+.svg__icon {
+    width: 1.5rem;
+    height: auto;
+    fill: #FFFFFF; /* Color inicial: Blanco */
+    transition: fill 0.3s ease; /* Transición suave */
+}
+.github:hover .svg__icon {
+    fill: #00d2ff; 
+}
+
+/* hover en LinkedIn */
+.linkedin:hover .svg__icon {
+    fill: #0A66C2;
+}
+
+/* hover en Instagram */
+.instagram:hover .svg__icon {
+    fill: url(#gradienteInstagram); /* Color de Instagram */
+}
+
+
+
+/* ------------------------------ Sección sobre mí ----------------------------------*/
+.sobre-mi{
+    background-color: var(--color-fondo-intercalado);
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 2rem;
+}
+.sobre-mi__titulo{
+    font-family: var(--raleway-font);
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: var(--color-font);
+}
+.sobre-mi__texto{
+    text-align: justify;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+}
+.signature{
+    margin: 1rem 0rem;
+    height: 4rem;
+    width: auto;
+    fill: none;
+    object-fit: contain;
+    align-self: flex-start;
+}
+/* .signature:hover{
+    stroke: url(#gradienteFirma) ;
+    fill: url(#gradienteFirma);
+
+} */
+#gradienteFirma {
+  transition: all 0.6s ease;
+}
+
+.signature:hover #gradienteFirma {
+  transform: rotate(45deg);
+}
+
+#path {
+ stroke-dasharray: 1;
+ stroke-dashoffset: 1;
+ animation: draw 5s linear forwards;
+}
+@keyframes draw {
+ to {
+ stroke-dashoffset: 0;
+ fill: white;
+ /* fill: url(#gradienteFirma); */
+ }
+}
 
 
 /*------------------------------ Sección de Habilidades ------------------------------*/
@@ -169,7 +390,7 @@ a {
 }
 #cards {
  display: grid;
- grid-template-rows: repeat(3, 40vh); /*80vh para desktop*/
+ grid-template-rows: repeat(3, 60vh); /*80vh para desktop*/
  gap: 2rem;
 }
 .formacion_elemento__content {
@@ -296,7 +517,7 @@ a {
 }
 
 /*------------------------------ Sección de Contacto ---------------------------------*/
-/* .contacto {
+.contacto {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -306,14 +527,10 @@ a {
     font-weight: bold;
     font-size: 1.6rem;
     color: var(--color-font);
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
-.contacto__contenedor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
+.Contacto__img {
+    display: none;
 }
 .contacto__informacion {
     display: flex;
@@ -330,15 +547,13 @@ a {
     width: 100%;
 }
 .contacto__formulario {
-    width: 100%;
-    max-width: 18rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     margin-top: 1rem;
 }
-.contacto__campo {
+.contacto__campor {
     font-size: 0.9rem;
     color: var(--color-font);
     align-self: flex-start;
@@ -346,22 +561,24 @@ a {
 .contacto__formulario input, textarea {
     width: 17rem;
     height: 2rem;
-    border: 1px solid rgba(34, 34, 34, 0.189); */
+    border: 1px solid rgba(34, 34, 34, 0.189);
     /* border-color: var(--color-de-fondo-menu); */
-    /* border-radius: 5px; */
+    border-radius: 5px;
     /*background: rgba(87, 87, 87, 0.167);*/
-/*     background: transparent;
+    background: transparent;
         
                 
 }
-input:focus, textarea:focus { */
+input:focus, textarea:focus {
     /* background: linear-gradient(rgba(103, 103, 103, 0.921), rgba(65, 65, 65, 0.788)) padding-box, 
-                linear-gradient(to right, #00d2ff, #183ebc) border-box;*/
-/*     background: rgba(87, 87, 87, 0.167);
+                
+                linear-gradient(to right, #00d2ff, #183ebc) border-box;
+    outline: none; */
+    background: rgba(87, 87, 87, 0.167);
     border: 1px solid #00d0ff0d;
     outline: none;
-} */
-/* .contacto__formulario textarea {
+}
+.contacto__formulario textarea {
     height: 7rem;
 }
 
@@ -378,7 +595,7 @@ input:focus, textarea:focus { */
 }
 .contacto__boton:hover {
     background: linear-gradient(to right, #183ebc, #00d2ff);
-} */
+}
 
 
 
@@ -397,7 +614,75 @@ input:focus, textarea:focus { */
 
 /* Tablets y pantallas más grandes */
 @media (min-width: 768px) {
-   
+
+    /*---------------- header ----------------*/
+    .header {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__titulo {
+        font-size: 1.5rem;
+    }
+
+    /*   -------   Navegación Menú   -------   */
+    
+
+/*     .navegacion__lista {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 0;
+    }
+
+    .nav_item a {
+        font-size: 1rem;
+    } */
+
+    /*---------------- Presentacion ----------------*/
+
+    .presentacion {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .presentacion__foto {
+        width: 16rem;
+        height: 16rem;
+        border-radius: 50%;
+    }
+
+    .presentacion__titulo {
+    font-family: var(--raleway-font);
+    font-weight: bold;
+    font-size: 5rem;
+    color: var(--color-font);
+    }
+    .presentacion__subtitulo {
+        font-family: var(--raleway-font);
+        font-weight: bold;
+        font-size: 2rem;
+        font-style: italic;
+        color: var(--color-font);
+    }
+
+    .presentacion__parrafo {
+        font-family: var(--raleway-font);
+        font-size: 1.1rem;
+        color: var(--color-font);
+        align-self: justify;
+        margin: 1rem 3rem 1rem 0rem; /*arriba, derecha, abajo, izquierda*/
+
+    }
+    .presentacion__contenedor { 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 0.2rem;
+    }
 
     /*---------------- Habilidades ----------------*/
     .habilidades__lista {
@@ -406,7 +691,6 @@ input:focus, textarea:focus { */
         justify-content: space-between;
         grid-template-columns: repeat(3, 1fr);
         grid-auto-rows: auto;
-        gap: 2rem;
         justify-content: center;
     }
 
@@ -418,7 +702,6 @@ input:focus, textarea:focus { */
         justify-content: space-between;
         grid-template-columns: repeat(3, 1fr);
         grid-auto-rows: auto;
-        gap: 2rem;
         justify-content: center;
     }
 
@@ -532,6 +815,64 @@ input:focus, textarea:focus { */
 /* Pantallas grandes */
 @media (min-width: 1024px) {
 
+    /* Aquí puedes ajustar aún más el diseño para pantallas grandes */
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__logo {
+        max-width: 100px;
+    }
+    
+    .header__titulo {
+        font-size: 1.8rem;
+    }
+
+
+    /*   -------   Navegación Menú   -------   */
+    .navegacion {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin-left: auto;
+        margin-top: 0;
+    }
+
+/*      .navegacion__lista {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 0;
+    } */
+
+    /* Mostrar todos los elementos de la lista */
+/*     .nav_item:not(:last-child) {
+        display: flex; /* Asegura que todos los elementos sean visibles */
+    /*} */
+
+   .nav_item a {
+        font-size: 1.1rem;
+    }
+
+    .menu__toggle{
+    display: none; /* Ocultar el botón de menú en pantallas grandes */
+    }
+
+    /*---------------- Presentacion ----------------*/
+
+    .presentacion {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 1rem;
+    }
+    
+    .presentacion__foto {
+        width: 23rem;
+        height: 23rem;
+        border-radius: 50%;
+    }
 
     /*------------------------------ Sección de Habilidades ------------------------------*/
 

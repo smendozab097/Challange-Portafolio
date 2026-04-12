@@ -1,0 +1,135 @@
+/* ------------------------------ Sección Presentación ------------------------------*/
+.presentacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 2rem;
+}
+.presentacion__titulo {
+    font-weight: bold;
+    font-size: 2.2rem;
+
+}
+.presentacion__subtitulo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 1.2rem;
+}
+.presentacion__contenedor { 
+    overflow: auto; /* Esto hace que el padre "abrace" a sus hijos flotantes */
+    margin: 1rem 0rem; 
+}
+.presentacion__foto {
+    width: 13rem;
+    height: 13rem;
+    float: right; /* Hace que la imagen flote a la derecha y el texto se ajuste a su alrededor. Se bloqquea si el padre define display: flex; */
+    shape-outside: circle(50%);
+    shape-margin: 1px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 30%;
+    margin-top: 0.5rem;
+    margin-left: 1.8rem;
+}
+.presentacion__parrafo {
+    font-size: 0.85rem;
+    text-align: justify;
+    line-height: 1.2;
+}
+
+
+.redes { 
+    max-width: 12rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+.svg__icon {
+    width: 1.5rem;
+    height: auto;
+    fill: #FFFFFF; /* Color inicial: Blanco */
+    transition: fill 0.3s ease; /* Transición suave */
+}
+#github:hover .svg__icon {
+    fill: #00d2ff; 
+}
+/* hover en LinkedIn */
+#linkedin:hover .svg__icon {
+    fill: #0A66C2;
+}
+/* hover en Instagram */
+#instagram:hover .svg__icon {
+    fill: url(#gradienteInstagram); /* Color de Instagram */
+}
+/* hover en Mascotas */
+#mascotas:hover .svg__icon {
+    fill: rgb(153, 34, 34);
+    /* fill: url(#gradienteMascotas); */
+}
+
+
+
+ /*---------------- Responsividad ----------------*/
+
+ /* Tablets y pantallas más grandes */
+/* @media (min-width: 768px) {
+
+    .presentacion {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .presentacion__foto {
+        width: 16rem;
+        height: 16rem;
+        border-radius: 50%;
+    }
+
+    .presentacion__titulo {
+    font-family: var(--raleway-font);
+    font-weight: bold;
+    font-size: 5rem;
+    color: var(--color-font);
+    }
+    .presentacion__subtitulo {
+        font-family: var(--raleway-font);
+        font-weight: bold;
+        font-size: 2rem;
+        font-style: italic;
+        color: var(--color-font);
+    }
+
+    .presentacion__parrafo {
+        font-family: var(--raleway-font);
+        font-size: 1.1rem;
+        color: var(--color-font);
+        align-self: justify;
+        margin: 1rem 3rem 1rem 0rem; /*arriba, derecha, abajo, izquierda*/
+
+    /*}
+    .presentacion__contenedor { 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 0.2rem;
+    }
+} */
+
+
+/* Laptops y pantallas más grandes */
+/* @media (min-width: 1024px) {
+
+    .presentacion {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 1rem;
+    }
+    
+    .presentacion__foto {
+        width: 23rem;
+        height: 23rem;
+        border-radius: 50%;
+    }
+} */

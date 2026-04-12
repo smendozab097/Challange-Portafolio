@@ -1,0 +1,115 @@
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 1rem; /*arriba-abajo, derecha-izquierda*/
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+/* para hacer que el header se mantenga fijo en la parte superior */
+/*version sticky*/
+    position: sticky;
+    top: 0; 
+    z-index: 1000;
+}
+
+.header__icon {
+    width: auto;
+    height: 1.5rem;
+    object-fit: contain;
+    fill: url(#gradienteLogo);
+}
+
+.header__titulo {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    text-align: center;
+}
+
+/*   -------   Navegación Menú   -------   */
+.navegacion {
+    margin-left: auto;
+    display: none; /* Ocultar la navegación en pantallas pequeñas */
+}
+
+.navegacion__lista {
+    list-style: none;
+    display: flex;
+    gap: 1.3rem; 
+}
+.nav_item .nav__buttons {
+    font-size: 0.8rem;
+    
+}
+.nav_item .nav__buttons:hover {
+    color: #00d2ff; 
+  }
+
+.menu__toggle{
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #cce0fd;
+    cursor: pointer;
+}
+.menu__toggle:hover {
+    color: #00d2ff;
+}
+
+
+
+
+/* ------------------------------ Responsividad ---------------------------------------*/
+
+
+/* Tablets y pantallas más grandes */
+@media (min-width: 768px) {
+
+    .header {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__titulo {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* Laptops y pantallas más grandes */
+@media (min-width: 1024px) {
+
+    /* Aquí puedes ajustar aún más el diseño para pantallas grandes */
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__logo {
+        max-width: 100px;
+    }
+    
+    .header__titulo {
+        font-size: 1.8rem;
+    }
+
+
+    /*   -------   Navegación Menú   -------   */
+    .navegacion {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin-left: auto;
+        margin-top: 0;
+    }
+
+    .menu__toggle{
+    display: none; /* Ocultar el botón de menú en pantallas grandes */
+    }
+}

@@ -1,0 +1,61 @@
+#contactMe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+.contacto__titulo {
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.contacto__contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    font-size: 0.9rem;
+    text-align:  justify;
+    margin: 1rem;
+    padding: 1.5rem 1.5rem;
+    gap: 0.5rem;
+}
+#contacto__formulario {
+    width: 100%;
+    max-width: 16rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.contacto__campo {
+    font-size: 0.9rem;
+    height: 1.5rem;
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(34, 34, 34, 0.189);
+}
+.contacto__campo:focus {
+    background: rgba(87, 87, 87, 0.167);
+    border: 1px solid #00d0ff0d;
+    outline: none;
+}
+#text_area {
+    height: 7rem;
+}
+.contacto__boton {
+    width: 6rem;
+    height: 2rem;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #00d2ff, #183ebc);
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.contacto__boton:hover {
+    background: linear-gradient(to right, #183ebc, #00d2ff);
+}
