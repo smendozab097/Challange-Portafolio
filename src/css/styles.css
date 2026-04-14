@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+/* Estilos de cada sección */
+@import url('./modal.css');
+@import url('./header.css');
+@import url('./landing.css');
+@import url('./aboutMe.css');
+@import url('./skills.css');
+@import url('./hobbies.css');
+@import url('./formation.css');
+@import url('./projects.css');
+@import url('./contactMe.css');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-fondo-oscuro: #050510e4; /* Un azul casi negro */
+    --color-neon-azul: #00d2ff;
+    --color-neon-purpura: #9d50bb;
+    --glass-bg: rgba(255, 255, 255, 0.05); /*transparencia de fondo*/
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --color-font: #e2e2e2;
+}
+
+body {
+    background-color: var(--color-fondo-oscuro);
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(157, 80, 187, 0.15) 0%, transparent 40%);
+    background-attachment: fixed; /* Para que las luces no se muevan al hacer scroll */
+    color: var(--color-font); /* Para que resalte sobre el fondo oscuro */
+    font-family: 'Raleway', sans-serif;
+    min-height: 100vh;
+    
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-de-link);
+}
+
+.glass-card {
+    background: rgba(0, 255, 255, 0.03); 
+    /*background: rgba(255, 255, 255, 0.03); /* Un toque de blanco casi invisible */
+    backdrop-filter: blur(12px); /* El esmerilado del cristal */
+    -webkit-backdrop-filter: blur(12px); /* Soporte para Safari */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* El borde fino */
+    border-radius: 15px; /* Bordes suaves */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Sombra para dar profundidad */
+    transition: all 0.3s ease; /* Como un amortiguador que suaviza cualquier cambio */
+}
+.glass-card:hover {
+    background: rgba(0, 255, 255, 0.05); /* Se vuelve un poco más opaco */
+    border-color: var(--color-neon-azul);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+}
+
+
+
+
+
+
+
+
+/* ------------------------------ Responsividad ---------------------------------------*/
+
+
+
+/* Tablets y pantallas más grandes */
+@media (min-width: 768px) {
+
+    
+    
+}
+
+    
+
+
+
+/* Pantallas grandes */
+@media (min-width: 1024px) {
+
+
+}
