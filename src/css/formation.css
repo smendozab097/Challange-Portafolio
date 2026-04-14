@@ -99,68 +99,45 @@
     width: 100%;
 }
 
+
+
+/* ------------------------------ Responsividad ---------------------------------------*/
+
 @media (min-width: 768px) {
-    /* .formacion__elemento{
-        width: 15rem;
-        padding: 1rem;
+    .formacion{
+        margin: 5rem 3rem;
     }
-    .formacion__icono{
-        width: 15rem;
-        height: 11rem;
-        display: flex;
-        object-fit: contain;
-        align-items: center;
-    } */
+    .formacion__titulo{
+        font-size: 2rem;
+    }
+     #cards {
+         display: grid;
+         grid-template-rows: repeat(3, 60vh); /*80vh para desktop*/
+         gap: 2rem;
+    }
+     .formacion_elemento__content {
+         animation: scale linear forwards;
+         animation-timeline: view();
+         animation-range: 25vh 60vh;
+    }
+     
+     @keyframes scale {
+      to {
+      transform: scale(calc(1.05 - (0.05 * var(--reverse-index))));
+      }
+    }
 
-    .formacion__lista{
-        display: flex;
-        flex-flow: wrap row;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 1.5rem;
-        margin-top: 1rem;
-        padding: 0;
-        
-        
-    }
-    .formacion__elemento{ 
-        display: flex;
-        flex-direction: column; 
-        align-content: center;
-        font-weight: bold;
-        font-size: 1.2rem;
-        color: var(--color-font);
-        width: 15rem;
-        margin: 0;
-        padding: 0;
+    .formacion__contenedor {
+        width: 100%;
+        height: 20rem;
 
     }
-    .formacion__icono{
-        width: 15rem;
-        height: 11rem;
-        display: flex;
+
+    .formacion__image {
+        width: 12rem;
+        height: auto;
         object-fit: contain;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 0rem;
-        margin-top: 0rem;
-        background-color: var(--color-de-fondo-menu);
-        border-radius: 5px;
-    }
-    .formacion__elemento img {
-        width: 15rem;
-        height: 100%;
-        object-fit: contain;
-        margin-bottom: 0rem;
-    }
-    /*.formacion__nombre {
-        max-width: 100%;
-        box-sizing: border-box;
-    }*/
-    .formacion__detalle{
-        max-width: 100%;
-        box-sizing: border-box;
-    }
+        margin: 1rem 0rem 1rem 1rem; /*arriba, derecha, abajo, izquierda*/
 
 
 }
