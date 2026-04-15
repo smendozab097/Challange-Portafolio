@@ -76,3 +76,14 @@
 
 
 }
+
+@media (min-width: 1440px) {
+
+    .skills-hobbies__lista {
+        gap:2rem;
+    }
+    .skills-hobbies__elemento {
+        width: 12rem;
+        height: 13rem;
+    }
+}

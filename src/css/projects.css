@@ -82,14 +82,12 @@
         gap: 2rem; 
     }
     .proyectos__images {
-        width: 30%;
+        width: 16rem;
     }
     #affinityApp, #encriptador, #pongGame {
-    width: 60%;
+    width: 31rem;
     height: auto;
     object-fit: contain;
     border-radius: 8px;
     }
-
-
 }
