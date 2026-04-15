@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Mis Mascotas - Estilo Glassmorfismo</title>
+    <style>
+        /* --- ESTILOS GENERALES (El Chasis del Coche) --- */
+        :root {
+            --primary-color: #333;
+            --background-color: #f4f7f6;
+            --text-color: #555;
+            --accent-color: #00bcd4; /* Un toque de color para los "botones" */
+            --header-glass-bg: rgba(255, 255, 255, 0.4);
+            --header-glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Crucial para el diseño, evita dolores de cabeza con los bordes */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Minimalista y limpia */
+            background-color: var(--background-color);
+            background-image: 
+                radial-gradient(at 10% 10%, hsla(180,100%,74%,0.15) 0px, transparent 50%),
+                radial-gradient(at 90% 90%, hsla(240,100%,84%,0.15) 0px, transparent 50%);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden; /* Evitamos scroll horizontal indeseado */
+        }
+
+        /* --- HEADER CON GLASSMORFISMO (La Cabina Transparente) --- */
+        header {
+            position: fixed; /* Lo fijamos arriba, como un parabrisas */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            z-index: 1000; /* Aseguramos que siempre esté por encima de la galería */
+
+            /* EL CORAZÓN DEL GLASSMORFISMO */
+            background: var(--header-glass-bg);
+            backdrop-filter: blur(10px); /* El efecto de desenfoque */
+            -webkit-backdrop-filter: blur(10px); /* Para compatibilidad con Safari */
+            border-bottom: 1px solid var(--header-glass-border); /* Borde sutil */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra suave para darle profundidad */
+        }
+
+        header h1 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- CONTENEDOR PRINCIPAL (El Taller de Montaje) --- */
+        main {
+            margin-top: 100px; /* Dejamos espacio para el header fijo */
+            padding: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- LA GALERÍA (La Línea de Ensamblaje) --- */
+        #pet-gallery {
+            display: grid; /* Usamos Grid, el "chasis de montaje" perfecto */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adaptable y responsivo */
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        /* --- TARJETA DE MASCOTA (La Pieza Final) --- */
+        .pet-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden; /* Cortamos la imagen para que siga la forma redonda */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03); /* Sombra muy sutil */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de movimiento */
+            cursor: pointer;
+        }
+
+        .pet-card:hover {
+            transform: translateY(-5px); /* Se levanta un poco al pasar el ratón */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); /* Sombra más fuerte al hover */
+        }
+
+        .pet-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* Ajusta la imagen sin deformarla */
+            display: block;
+        }
+
+        .pet-card-info {
+            padding: 15px;
+        }
+
+        .pet-card-info h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .pet-card-info p {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* --- BOTÓN DE AÑADIR (La Herramienta de Expansión) --- */
+        #add-pet-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 20px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        #add-pet-btn:hover {
+            background-color: #00acc1; /* Un tono un poco más oscuro al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mis Mascotas</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#pet-gallery">Galería</a></li>
+                <li><a href="#">Sobre Mí</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="pet-gallery">
+            </div>
+
+        <button id="add-pet-btn">¡Añadir Mascota! (Simulación)</button>
+    </main>
+
+    <script>
+        // --- LOS DATOS (El Combustible) ---
+        // Imagina que esto viene de una base de datos
+        const petsData = [
+            { id: 1, name: "Max", type: "Perro", image: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mnx8ZG9nfGVufDB8fHx8MTY3ODk0Njc3OA&ixlib=rb-4.0.3&q=80&w=400" },
+            { id: 2, name: "Luna", type: "Gato", image: "https://images.unsplash.com/photo-1514888286974-8c23e18d7963?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8MXx8Y2F0fGVufDB8fHx8MTY3ODk0NjgxNA&ixlib=rb-4.0.3&q=80&w=400" },
+            { id: 3, name: "Rocky", type: "Hámster", image: "https://images.unsplash.com/photo-1425082661705-1834bfd09dca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8MXx8aGFtc3RlcnxGVufDB8fHx8MTY3ODk0Njg4NQ&ixlib=rb-4.0.3&q=80&w=400" },
+            { id: 4, name: "Chica", type: "Loro", image: "https://images.unsplash.com/photo-1582239474720-3b4c1945f8f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8M3x8cGFycm90fGVufDB8fHx8MTY3ODk0NjkyMg&ixlib=rb-4.0.3&q=80&w=400" },
+            { id: 5, name: "Sparky", type: "Iguana", image: "https://images.unsplash.com/photo-1548671169-1c6670876ff3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mnx8aWd1YW5hfGVufDB8fHx8MTY3ODk0Njk2Ng&ixlib=rb-4.0.3&q=80&w=400" },
+            { id: 6, name: "Milo", type: "Conejo", image: "https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mnx8cmFiYml0fGVufDB8fHx8MTY3ODk0Njk5NA&ixlib=rb-4.0.3&q=80&w=400" }
+        ];
+
+        // --- LA MECÁNICA (La Función de Montaje) ---
+        // Función para crear una tarjeta de mascota a partir de los datos
+        function createPetCard(pet) {
+            // 1. Creamos la "pieza" contenedora (el chasis de la tarjeta)
+            const card = document.createElement('div');
+            card.classList.add('pet-card');
+
+            // 2. Creamos la "pieza" de la imagen y la "montamos"
+            const img = document.createElement('img');
+            img.src = pet.image;
+            img.alt = `Foto de ${pet.name}`;
+            card.appendChild(img);
+
+            // 3. Creamos la "pieza" de información y la "montamos"
+            const infoDiv = document.createElement('div');
+            infoDiv.classList.add('pet-card-info');
+
+            const name = document.createElement('h3');
+            name.textContent = pet.name;
+            infoDiv.appendChild(name);
+
+            const type = document.createElement('p');
+            type.textContent = pet.type;
+            infoDiv.appendChild(type);
+
+            card.appendChild(infoDiv);
+
+            // 4. Devolvemos la pieza finalizada
+            return card;
+        }
+
+        // --- EL ENSAMBLAJE (El Bucle de Renderizado) ---
+        // Obtenemos el contenedor donde vamos a montar todo
+        const galleryContainer = document.getElementById('pet-gallery');
+
+        // Función para renderizar la galería completa
+        function renderGallery() {
+            // Limpiamos el contenedor (como limpiar la mesa de trabajo)
+            galleryContainer.innerHTML = '';
+
+            // Iteramos sobre los datos y montamos cada tarjeta
+            petsData.forEach(pet => {
+                const petCard = createPetCard(pet);
+                galleryContainer.appendChild(petCard);
+            });
+        }
+
+        // --- INICIO DE OPERACIONES (El Botón de Arranque) ---
+        // Llamamos a la función de renderizado por primera vez
+        renderGallery();
+
+        // --- EVENTOS (Los Sensores y Actuadores) ---
+        // Simulación: al hacer clic en el botón, añadimos una mascota genérica
+        const addBtn = document.getElementById('add-pet-btn');
+        addBtn.addEventListener('click', () => {
+            const nextId = petsData.length + 1;
+            petsData.push({ 
+                id: nextId, 
+                name: `Mascota #${nextId}`, 
+                type: "Mascota Genérica", 
+                image: "https://images.unsplash.com/photo-1517849845537-4d257902454a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mnx8ZG9nfGVufDB8fHx8MTY3ODk0Njc3OA&ixlib=rb-4.0.3&q=80&w=400" 
+            });
+            renderGallery(); // Volvemos a renderizar para ver los cambios (eficiencia a mejorar...)
+        });
+
+    </script>
+</body>
+</html>
+
