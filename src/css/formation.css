@@ -139,13 +139,20 @@
 @media (min-width: 1024px) {
 
     #cards {
-        grid-template-rows: repeat(3, 90vh); /* Aumentamos la altura para pantallas más grandes */
+        grid-template-rows: repeat(3, 100vh); /* Aumentamos la altura para pantallas más grandes */
+        justify-content: center;
     }
 
     .formacion__contenedor {
-        width: 100%;
-        height: 35rem;
+        width: 55rem;
+        height: 27rem;
 
     }
 
+}
+
+@media (min-width: 1440px) {
+    #cards {
+        grid-template-rows: repeat(3, 75vh);
+    }
 }

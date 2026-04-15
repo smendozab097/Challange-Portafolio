@@ -38,6 +38,8 @@ body {
     
 }
 
+
+
 ol, ul, li {
     list-style: none;
 }
@@ -86,6 +88,11 @@ a {
 
 /* Tablets y pantallas más grandes */
 @media (min-width: 768px) {
+
+    main{   
+    padding: 0rem 1rem;
+    }
+
     .titulos{
         font-weight: bold;
         font-size: 2rem;
@@ -105,6 +112,11 @@ a {
 
 /* Pantallas grandes */
 @media (min-width: 1024px) {
+
+    main{   
+    padding: 0rem 2rem;
+    }
+
     .titulos{
         font-weight: bold;
         font-size: 2.3rem;
@@ -116,4 +128,11 @@ a {
     font-size: 1.2rem;
     }
 
+}
+
+@media (min-width: 1440px) {
+
+    main{   
+    padding: 0rem 4.5rem;
+    }
 }

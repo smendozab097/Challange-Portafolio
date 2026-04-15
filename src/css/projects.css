@@ -74,7 +74,8 @@
 @media (min-width: 1024px) {
 
     .proyectos__contenedor {
-        height: 25rem;
+        height: 20rem;
+        width: 55rem;
         flex-direction: row; 
         align-items: center; 
         justify-content: space-between;
@@ -85,7 +86,7 @@
         width: 16rem;
     }
     #affinityApp, #encriptador, #pongGame {
-    width: 31rem;
+    width: 25rem;
     height: auto;
     object-fit: contain;
     border-radius: 8px;

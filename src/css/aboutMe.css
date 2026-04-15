@@ -23,6 +23,11 @@
 
 /* Laptops y pantallas más grandes */
 @media (min-width: 1024px) {
+    .sobre-mi{
+        display: flex;
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
 
     
     

@@ -125,8 +125,13 @@
 /* Escritorio y pantallas más grandes */
 @media (min-width: 1024px) {
      .contacto__contenedor {
-        width: 50rem;
-        gap: 1rem;
+        width: 40rem;
+        gap: 3rem;
+     }
+
+     .contacto__detalles {
+        font-size: 1.5rem;
+        width: 18rem;
      }
      #contactText {
         font-size: 1.2rem;
@@ -142,7 +147,7 @@
         margin-top: 1rem;
     }
     .contacto__imagen {
-        width: 50%;
+        width: 12rem;
         max-width: 20rem;
     }
 }
