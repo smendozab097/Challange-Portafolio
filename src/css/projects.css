@@ -3,20 +3,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
-    margin: 4rem 1rem;
-}
-.proyectos__titulo {
-    font-weight: bold;
-    font-size: 1.6rem;
-    color: var(--color-font);
-    margin-bottom: 2.5rem;
-}
-.proyectos__descripcion {
-    font-size: 0.9rem;
-    color: var(--color-font);
-    text-align: justify;
-
+    padding: 0rem;
+    margin: 4rem 3rem;
 }
 .proyectos__lista {
     display: flex;
@@ -46,33 +34,38 @@
     border-radius: 25px;
 }
 
+#affinityApp, #encriptador, #pongGame {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
 .contenedor__detalles {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 1.7rem;
-    margin-top: 1rem;
 
 }
 
 
 @media (min-width: 768px) {
-    /* .proyectos__contenedor {
-        flex-direction: row;
-        align-items: flex-start;
+
+    .proyectos__contenedor {
+        height: 19rem;
+        flex-direction: row; /* Imagen y texto lado a lado */
+        align-items: center; /* Alineamos al inicio para que el texto quede a la derecha de la imagen */
+        gap: 2rem; /* Espacio entre imagen y texto */
     }
     .proyectos__images {
         width: 40%;
     }
-    .contenedor__detalles {
-        align-items: flex-start;
-        gap: 1.5rem;
-    } */ 
-
-    .proyectos__contenedor {
-        flex-direction: row; /* Imagen y texto lado a lado */
-        text-align: left;
-    }
+    #affinityApp, #encriptador, #pongGame {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
 
 }
 
@@ -80,6 +73,23 @@
 /* Escritorios y pantallas más grandes */
 @media (min-width: 1024px) {
 
+    .proyectos__contenedor {
+        height: 25rem;
+        flex-direction: row; 
+        align-items: center; 
+        justify-content: space-between;
+        padding: 3rem;
+        gap: 2rem; 
+    }
+    .proyectos__images {
+        width: 30%;
+    }
+    #affinityApp, #encriptador, #pongGame {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    }
 
 
 }
