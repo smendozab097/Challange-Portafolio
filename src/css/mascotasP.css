@@ -1,0 +1,143 @@
+/* --- ESTILOS GENERALES (El Chasis del Coche) --- */
+:root {
+    --primary-color: #333;
+    --background-color: #f4f7f6;
+    --text-color: #555;
+    --accent-color: #00bcd4; /* Un toque de color para los "botones" */
+    --header-glass-bg: rgba(255, 255, 255, 0.4);
+    --header-glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Crucial para el diseño, evita dolores de cabeza con los bordes */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Minimalista y limpia */
+    background-color: var(--background-color);
+    background-image: 
+        radial-gradient(at 10% 10%, hsla(180,100%,74%,0.15) 0px, transparent 50%),
+        radial-gradient(at 90% 90%, hsla(240,100%,84%,0.15) 0px, transparent 50%);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evitamos scroll horizontal indeseado */
+}
+
+/* --- HEADER CON GLASSMORFISMO (La Cabina Transparente) --- */
+header {
+    position: fixed; /* Lo fijamos arriba, como un parabrisas */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    z-index: 1000; /* Aseguramos que siempre esté por encima de la galería */
+
+    /* EL CORAZÓN DEL GLASSMORFISMO */
+    background: var(--header-glass-bg);
+    backdrop-filter: blur(10px); /* El efecto de desenfoque */
+    -webkit-backdrop-filter: blur(10px); /* Para compatibilidad con Safari */
+    border-bottom: 1px solid var(--header-glass-border); /* Borde sutil */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra suave para darle profundidad */
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--accent-color);
+}
+
+/* --- CONTENEDOR PRINCIPAL (El Taller de Montaje) --- */
+main {
+    margin-top: 100px; /* Dejamos espacio para el header fijo */
+    padding: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- LA GALERÍA (La Línea de Ensamblaje) --- */
+#pet-gallery {
+    display: grid; /* Usamos Grid, el "chasis de montaje" perfecto */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adaptable y responsivo */
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* --- TARJETA DE MASCOTA (La Pieza Final) --- */
+.pet-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden; /* Cortamos la imagen para que siga la forma redonda */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03); /* Sombra muy sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de movimiento */
+    cursor: pointer;
+}
+
+.pet-card:hover {
+    transform: translateY(-5px); /* Se levanta un poco al pasar el ratón */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); /* Sombra más fuerte al hover */
+}
+
+.pet-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    display: block;
+}
+
+.pet-card-info {
+    padding: 15px;
+}
+
+.pet-card-info h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.pet-card-info p {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* --- BOTÓN DE AÑADIR (La Herramienta de Expansión) --- */
+#add-pet-btn {
+    display: block;
+    margin: 30px auto;
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+#add-pet-btn:hover {
+    background-color: #00acc1; /* Un tono un poco más oscuro al pasar el ratón */
+}

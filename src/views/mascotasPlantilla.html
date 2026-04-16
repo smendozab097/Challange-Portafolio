@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/mascotas.css">
+    <title>Galería de Mascotas</title>
+</head>
+<body>
+
+    <header>
+        <h1>Galería de Mascotas</h1>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="#pet-gallery">Galería</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="pet-gallery">
+            </div>
+
+        <button id="add-pet-btn">¡Añadir Mascota! (Simulación)</button>
+    </main>
+
+    <script>
+        // --- LOS DATOS (El Combustible) ---
+        // Imagina que esto viene de una base de datos
+        const petsData = [
+            { id: 1, name: "Max", type: "Perro", image: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mnx8ZG9nfGVufDB8fHx8MTY3ODk0Njc3OA&ixlib=rb-4.0.3&q=80&w=400" },
+            { id: 2, name: "Luna", type: "Gato", image: "https://images.unsplash.com/photo-1514888286974-8c23e18d7963?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8MXx8Y2F0fGVufDB8fHx8MTY3ODk0NjgxNA&ixlib=rb-4.0.3&q=80&w=400" },
+            { id: 3, name: "Rocky", type: "Hámster", image: "https://images.unsplash.com/photo-1425082661705-1834bfd09dca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8MXx8aGFtc3RlcnxGVufDB8fHx8MTY3ODk0Njg4NQ&ixlib=rb-4.0.3&q=80&w=400" },
+            { id: 4, name: "Chica", type: "Loro", image: "https://images.unsplash.com/photo-1582239474720-3b4c1945f8f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8M3x8cGFycm90fGVufDB8fHx8MTY3ODk0NjkyMg&ixlib=rb-4.0.3&q=80&w=400" },
+            { id: 5, name: "Sparky", type: "Iguana", image: "https://images.unsplash.com/photo-1548671169-1c6670876ff3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mnx8aWd1YW5hfGVufDB8fHx8MTY3ODk0Njk2Ng&ixlib=rb-4.0.3&q=80&w=400" },
+            { id: 6, name: "Milo", type: "Conejo", image: "https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mnx8cmFiYml0fGVufDB8fHx8MTY3ODk0Njk5NA&ixlib=rb-4.0.3&q=80&w=400" }
+        ];
+
+        // --- LA MECÁNICA (La Función de Montaje) ---
+        // Función para crear una tarjeta de mascota a partir de los datos
+        function createPetCard(pet) {
+            // 1. Creamos la "pieza" contenedora (el chasis de la tarjeta)
+            const card = document.createElement('div');
+            card.classList.add('pet-card');
+
+            // 2. Creamos la "pieza" de la imagen y la "montamos"
+            const img = document.createElement('img');
+            img.src = pet.image;
+            img.alt = `Foto de ${pet.name}`;
+            card.appendChild(img);
+
+            // 3. Creamos la "pieza" de información y la "montamos"
+            const infoDiv = document.createElement('div');
+            infoDiv.classList.add('pet-card-info');
+
+            const name = document.createElement('h3');
+            name.textContent = pet.name;
+            infoDiv.appendChild(name);
+
+            const type = document.createElement('p');
+            type.textContent = pet.type;
+            infoDiv.appendChild(type);
+
+            card.appendChild(infoDiv);
+
+            // 4. Devolvemos la pieza finalizada
+            return card;
+        }
+
+        // --- EL ENSAMBLAJE (El Bucle de Renderizado) ---
+        // Obtenemos el contenedor donde vamos a montar todo
+        const galleryContainer = document.getElementById('pet-gallery');
+
+        // Función para renderizar la galería completa
+        function renderGallery() {
+            // Limpiamos el contenedor (como limpiar la mesa de trabajo)
+            galleryContainer.innerHTML = '';
+
+            // Iteramos sobre los datos y montamos cada tarjeta
+            petsData.forEach(pet => {
+                const petCard = createPetCard(pet);
+                galleryContainer.appendChild(petCard);
+            });
+        }
+
+        // --- INICIO DE OPERACIONES (El Botón de Arranque) ---
+        // Llamamos a la función de renderizado por primera vez
+        renderGallery();
+
+        // --- EVENTOS (Los Sensores y Actuadores) ---
+        // Simulación: al hacer clic en el botón, añadimos una mascota genérica
+        const addBtn = document.getElementById('add-pet-btn');
+        addBtn.addEventListener('click', () => {
+            const nextId = petsData.length + 1;
+            petsData.push({ 
+                id: nextId, 
+                name: `Mascota #${nextId}`, 
+                type: "Mascota Genérica", 
+                image: "https://images.unsplash.com/photo-1517849845537-4d257902454a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mnx8ZG9nfGVufDB8fHx8MTY3ODk0Njc3OA&ixlib=rb-4.0.3&q=80&w=400" 
+            });
+            renderGallery(); // Volvemos a renderizar para ver los cambios (eficiencia a mejorar...)
+        });
+
+    </script>
+</body>
+</html>

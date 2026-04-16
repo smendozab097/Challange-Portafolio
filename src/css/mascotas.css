@@ -1,143 +1,237 @@
-/* --- ESTILOS GENERALES (El Chasis del Coche) --- */
-:root {
-    --primary-color: #333;
-    --background-color: #f4f7f6;
-    --text-color: #555;
-    --accent-color: #00bcd4; /* Un toque de color para los "botones" */
-    --header-glass-bg: rgba(255, 255, 255, 0.4);
-    --header-glass-border: rgba(255, 255, 255, 0.1);
-}
-
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Crucial para el diseño, evita dolores de cabeza con los bordes */
+    box-sizing: border-box;
+}
+
+:root {
+    --color-fondo: #f8f8f8e4; /* Un azul casi negro */
+    --color-dorado-shiny: #ffd500;
+    --color-dorado-dark: #bb9750;
+    --glass-bg: rgba(255, 255, 255, 0.05); /*transparencia de fondo*/
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --color-font-oscuro: #3B3F3D;
+    --color-font-claro: rgb(251, 247, 242)
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Minimalista y limpia */
-    background-color: var(--background-color);
+    background-color: var(--color-fondo);
     background-image: 
-        radial-gradient(at 10% 10%, hsla(180,100%,74%,0.15) 0px, transparent 50%),
-        radial-gradient(at 90% 90%, hsla(240,100%,84%,0.15) 0px, transparent 50%);
-    color: var(--text-color);
-    line-height: 1.6;
-    overflow-x: hidden; /* Evitamos scroll horizontal indeseado */
+        radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(157, 80, 187, 0.15) 0%, transparent 40%);
+    background-attachment: fixed; 
+    font-family: 'Quicksand', sans-serif;
+    min-height: 100vh;
+    
 }
 
-/* --- HEADER CON GLASSMORFISMO (La Cabina Transparente) --- */
+
+
+ol, ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    
+}
+
+.glass-card {
+    /* background: rgba(0, 255, 255, 0.03);  */
+    background: rgba(181, 173, 138, 0); /* Un toque de blanco casi invisible */
+    backdrop-filter: blur(20px); /* El esmerilado del cristal */
+    -webkit-backdrop-filter: blur(20px); /* Soporte para Safari */
+    /*border: 1px solid rgba(255, 255, 255, 0.1); /* El borde fino */
+    border-radius: 5%; /* Bordes suaves */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Sombra para dar profundidad */
+    transition: all 0.3s ease; /* Como un amortiguador que suaviza cualquier cambio */
+}
+.glass-card:hover {
+    background: rgba(0, 255, 255, 0.05); /* Se vuelve un poco más opaco */
+    border: 1px solid var(--color-dorado-shiny);
+    /* border-color: var(--color-dorado-shiny); */
+    box-shadow: 0 0 15px var(--color-dorado-dark)
+}
+
 header {
-    position: fixed; /* Lo fijamos arriba, como un parabrisas */
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 80px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
-    z-index: 1000; /* Aseguramos que siempre esté por encima de la galería */
-
-    /* EL CORAZÓN DEL GLASSMORFISMO */
-    background: var(--header-glass-bg);
-    backdrop-filter: blur(10px); /* El efecto de desenfoque */
-    -webkit-backdrop-filter: blur(10px); /* Para compatibilidad con Safari */
-    border-bottom: 1px solid var(--header-glass-border); /* Borde sutil */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra suave para darle profundidad */
+    color: var(--color-font-claro);
+    padding: 0rem 0.8rem; /*arriba-abajo, derecha-izquierda*/
+    background-color: rgba(0, 0, 0, 0.887);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgb(107, 106, 106);
+    /* para hacer que el header se mantenga fijo en la parte superior */
+    /*version sticky*/
+    position: sticky;
+    top: 0; 
+    z-index: 1000;
 }
 
-header h1 {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    font-weight: 600;
+.header__icon {
+    width: auto;
+    height: 1.7rem;
+    margin-top: 0.1rem;
+    fill: var(--color-font-claro);
+}
+.header__icon:hover {
+    fill: url(#gradienteLogo);
 }
 
-header nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
-
-header nav a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-header nav a:hover {
-    color: var(--accent-color);
-}
-
-/* --- CONTENEDOR PRINCIPAL (El Taller de Montaje) --- */
-main {
-    margin-top: 100px; /* Dejamos espacio para el header fijo */
-    padding: 20px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* --- LA GALERÍA (La Línea de Ensamblaje) --- */
-#pet-gallery {
-    display: grid; /* Usamos Grid, el "chasis de montaje" perfecto */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adaptable y responsivo */
-    gap: 20px;
-    padding: 20px 0;
-}
-
-/* --- TARJETA DE MASCOTA (La Pieza Final) --- */
-.pet-card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden; /* Cortamos la imagen para que siga la forma redonda */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03); /* Sombra muy sutil */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de movimiento */
-    cursor: pointer;
-}
-
-.pet-card:hover {
-    transform: translateY(-5px); /* Se levanta un poco al pasar el ratón */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); /* Sombra más fuerte al hover */
-}
-
-.pet-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover; /* Ajusta la imagen sin deformarla */
-    display: block;
-}
-
-.pet-card-info {
-    padding: 15px;
-}
-
-.pet-card-info h3 {
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-}
-
-.pet-card-info p {
+.header__titulo {
+    font-weight: bold;
     font-size: 0.9rem;
-    color: #777;
+    display: inline-block;
+    margin-left: 0.5rem;
+    text-align: center;
+}
+.header__titulo:hover {
+    display: inline-block;
+    background-image: linear-gradient(
+        to right,
+        #bf953f,
+        #fcf6ba,
+        #b38728,
+        #fbf5b7,
+        #aa771c
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
-/* --- BOTÓN DE AÑADIR (La Herramienta de Expansión) --- */
-#add-pet-btn {
-    display: block;
-    margin: 30px auto;
-    padding: 10px 20px;
-    background-color: var(--accent-color);
-    color: white;
+/*   -------   Navegación Menú   -------   */
+.navegacion {
+    margin-left: auto;
+    align-items: center;
+}
+
+.navegacion__lista {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem; 
+}
+.nav_item .nav__buttons {
+    font-size: 0.7rem;
+    color: var(--color-font-claro);
+    
+}
+.nav_item .nav__buttons:hover {
+    color: #fff200e0; 
+}
+
+.menu__toggle{
+    font-size: 1.5rem;
+    background: none;
     border: none;
-    border-radius: 5px;
+    color: #cce0fd;
     cursor: pointer;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
+}
+.menu__toggle:hover {
+    color: #00d2ff;
 }
 
-#add-pet-btn:hover {
-    background-color: #00acc1; /* Un tono un poco más oscuro al pasar el ratón */
+
+/* ------------------------------ Fotos destacadas ------------------------------------*/
+.mascotas-destacadas{
+    display: flex;
+    gap: 3rem;
+}
+.mascota-destacada{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mascota-destacada img{
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+    border-radius: 5%;
+    object-position: 50% 45%;
+    margin: 0rem 0rem 1rem 0rem;
+}
+
+/* ------------------------------ Responsividad ---------------------------------------*/
+
+
+/* Tablets y pantallas más grandes */
+@media (min-width: 768px) {
+
+    header {
+        padding: 0rem 1.5rem 0rem 1rem;
+    }
+
+    .header__titulo {
+        font-size: 1.5rem;
+    }
+
+    .navegacion__lista {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    } 
+
+    .nav_item .nav__buttons {
+    font-size: 0.9rem;
+    
+    }
+}
+
+
+/* Laptops y pantallas más grandes */
+@media (min-width: 1024px) {
+
+    /* Aquí puedes ajustar aún más el diseño para pantallas grandes */
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__logo {
+        max-width: 100px;
+    }
+    
+    .header__titulo {
+        font-size: 1.8rem;
+    }
+
+
+    /*   -------   Navegación Menú   -------   */
+    .navegacion {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin-left: auto;
+        margin-top: 0;
+    }
+
+    .menu__toggle{
+    display: none; /* Ocultar el botón de menú en pantallas grandes */
+    }
+
+    /* ------------------------------ Fotos destacadas ------------------------------------*/
+    .mascotas-destacadas{
+        display: flex;
+        gap: 3rem;
+    }
+    .mascota-destacada{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .mascota-destacada img{
+        width: 20rem;
+        height: 20rem;
+        object-fit: cover;
+        border-radius: 5%;
+        object-position: 50% 45%;
+        margin: 0rem 0rem 1rem 0rem;
+    }
 }
