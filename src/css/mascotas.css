@@ -25,7 +25,11 @@ body {
     
 }
 
-
+h2{ 
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+}
 
 ol, ul, li {
     list-style: none;
@@ -60,7 +64,7 @@ header {
     justify-content: space-between;
     align-items: center;
     color: var(--color-font-claro);
-    padding: 0rem 0.8rem; /*arriba-abajo, derecha-izquierda*/
+    padding: 0rem 0.8rem;
     background-color: rgba(0, 0, 0, 0.887);
     backdrop-filter: blur(10px);
     box-shadow: 0 0 15px rgb(107, 106, 106);
@@ -73,7 +77,7 @@ header {
 
 .header__icon {
     width: auto;
-    height: 1.7rem;
+    height: 1.2rem;
     margin-top: 0.1rem;
     fill: var(--color-font-claro);
 }
@@ -82,7 +86,7 @@ header {
 }
 
 .header__titulo {
-    font-weight: bold;
+    font-weight: 600;
     font-size: 0.9rem;
     display: inline-block;
     margin-left: 0.5rem;
@@ -90,6 +94,10 @@ header {
 }
 .header__titulo:hover {
     display: inline-block;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
     background-image: linear-gradient(
         to right,
         #bf953f,
@@ -98,10 +106,6 @@ header {
         #fbf5b7,
         #aa771c
     );
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
 }
 
 /*   -------   Navegación Menú   -------   */
@@ -112,48 +116,61 @@ header {
 
 .navegacion__lista {
     list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem; 
+    display: none;
 }
-.nav_item .nav__buttons {
-    font-size: 0.7rem;
-    color: var(--color-font-claro);
-    
-}
-.nav_item .nav__buttons:hover {
-    color: #fff200e0; 
-}
-
 .menu__toggle{
-    font-size: 1.5rem;
+    font-size: 0.9rem;
     background: none;
     border: none;
-    color: #cce0fd;
+    color: var(--color-font-claro);
     cursor: pointer;
 }
 .menu__toggle:hover {
-    color: #00d2ff;
+    color: var(--color-dorado-dark);
 }
 
 
 /* ------------------------------ Fotos destacadas ------------------------------------*/
 .mascotas-destacadas{
     display: flex;
+    flex-flow: column wrap;
     gap: 3rem;
 }
 .mascota-destacada{
+    width: 10rem;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
+
 }
 .mascota-destacada img{
-    width: 20rem;
-    height: 20rem;
+    width: 10rem;
+    height: 10rem;
     object-fit: cover;
     border-radius: 5%;
     object-position: 50% 45%;
     margin: 0rem 0rem 1rem 0rem;
+}
+
+/* ------------------------------ Footer ------------------------------------*/
+
+.creditos{
+    display: flex;
+    flex-flow: column;
+}
+.creditos a {
+    font-size: 0.5rem;
+}
+
+.autor__contacto{
+    display: flex;
+    justify-content: space-around;
+}
+#copyright {
+    font-size: 0.4rem;
+    text-align: center;
+
 }
 
 /* ------------------------------ Responsividad ---------------------------------------*/
@@ -171,15 +188,19 @@ header {
     }
 
     .navegacion__lista {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
     } 
 
     .nav_item .nav__buttons {
-    font-size: 0.9rem;
+        font-size: 0.7rem;
+        color: var(--color-font-claro);
     
+    }
+    .nav_item .nav__buttons:hover {
+        color: #fff200e0; 
     }
 }
 

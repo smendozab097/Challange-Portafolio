@@ -101,8 +101,8 @@
 }
 /* hover en Mascotas */
 #mascotas:hover .svg__icon {
-    fill: rgb(153, 34, 34);
-    /* fill: url(#gradienteMascotas); */
+    /* fill: rgb(153, 34, 34); */
+    fill: url(#gradienteMascotas);
 }
 
 
