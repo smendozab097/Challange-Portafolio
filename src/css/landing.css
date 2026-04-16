@@ -48,19 +48,18 @@
     align-self: flex-start;
 }
 
-#gradienteFirma {
-  transition: all 0.5s ease;
-}
 
-/* .signature:hover #gradienteFirma {
+
+.signature:hover #gradienteFirma {
     fill: url(#gradienteFirma);
     transform: rotate(45deg);
-} */
+    transition: all 0.5s ease;
+}
 
 #path {
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
-    animation: draw 5s linear forwards;
+    animation: draw 3s linear forwards;
 }
 @keyframes draw {
     to {
@@ -72,8 +71,8 @@
 #path:hover {
     backdrop-filter: blur(2px);
     /* stroke: rgb(169, 212, 228); */
-    stroke: rgba(0, 191, 255, 0.63); /*  Color linea */
-    stroke-width: 5;
+    /* stroke: rgba(0, 191, 255, 0.63);  */
+    stroke-width: 3;
 }
 
 .redes { 

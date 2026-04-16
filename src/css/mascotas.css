@@ -5,10 +5,13 @@
 }
 
 :root {
-    --color-fondo: #f8f8f8e4; /* Un azul casi negro */
+    --font-destacada: 'Fraunces', serif;
+    --font-principal: 'Quicksand', sans-serif;
+    --color-fondo: #f6f2ec; 
+    --color-header: rgba(18, 15, 13, 0.925);
     --color-dorado-shiny: #ffd500;
     --color-dorado-dark: #bb9750;
-    --glass-bg: rgba(255, 255, 255, 0.05); /*transparencia de fondo*/
+    --glass-bg: rgba(255, 255, 255, 0.05); 
     --glass-border: rgba(255, 255, 255, 0.1);
     --color-font-oscuro: #3B3F3D;
     --color-font-claro: rgb(251, 247, 242)
@@ -20,7 +23,7 @@ body {
         radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.15) 0%, transparent 40%),
         radial-gradient(circle at 90% 80%, rgba(157, 80, 187, 0.15) 0%, transparent 40%);
     background-attachment: fixed; 
-    font-family: 'Quicksand', sans-serif;
+    font-family: var(--font-principal);
     min-height: 100vh;
     
 }
@@ -42,16 +45,16 @@ a {
 
 .glass-card {
     /* background: rgba(0, 255, 255, 0.03);  */
-    background: rgba(181, 173, 138, 0); /* Un toque de blanco casi invisible */
-    backdrop-filter: blur(20px); /* El esmerilado del cristal */
-    -webkit-backdrop-filter: blur(20px); /* Soporte para Safari */
+    background: rgba(181, 173, 138, 0); 
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px); 
     /*border: 1px solid rgba(255, 255, 255, 0.1); /* El borde fino */
-    border-radius: 5%; /* Bordes suaves */
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Sombra para dar profundidad */
-    transition: all 0.3s ease; /* Como un amortiguador que suaviza cualquier cambio */
+    border-radius: 5%; 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); 
+    transition: all 0.3s ease; 
 }
 .glass-card:hover {
-    background: rgba(0, 255, 255, 0.05); /* Se vuelve un poco más opaco */
+    background: rgba(0, 255, 255, 0.05); 
     border: 1px solid var(--color-dorado-shiny);
     /* border-color: var(--color-dorado-shiny); */
     box-shadow: 0 0 15px var(--color-dorado-dark)
@@ -59,13 +62,16 @@ a {
 
 header {
     width: 100%;
+    font-family: var(--font-destacada);
+    font-size: 0.6rem;
+    letter-spacing: -0.02em;
+    color: var(--color-font-claro);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    color: var(--color-font-claro);
     padding: 0rem 0.8rem;
-    background-color: rgba(0, 0, 0, 0.887);
+    background-color:var(--color-header);
     backdrop-filter: blur(10px);
     box-shadow: 0 0 15px rgb(107, 106, 106);
     /* para hacer que el header se mantenga fijo en la parte superior */
@@ -86,14 +92,23 @@ header {
 }
 
 .header__titulo {
-    font-weight: 600;
-    font-size: 0.9rem;
+    font-weight: 100;
     display: inline-block;
     margin-left: 0.5rem;
     text-align: center;
 }
 .header__titulo:hover {
-    display: inline-block;
+    background: 
+        linear-gradient(120deg, 
+            transparent 0%, 
+            transparent 40%, 
+            rgba(255,255,255, 0.8) 50%, 
+            transparent 60%, 
+            transparent 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    
+    /* display: inline-block;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -105,7 +120,7 @@ header {
         #b38728,
         #fbf5b7,
         #aa771c
-    );
+    ); */
 }
 
 /*   -------   Navegación Menú   -------   */

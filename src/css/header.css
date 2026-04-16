@@ -15,11 +15,25 @@
     z-index: 1000;
 }
 
+#cont_icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 1.5rem;
+}
 .header__icon {
     width: auto;
-    height: 1.5rem;
+    height: 100%;
     object-fit: contain;
     fill: url(#gradienteLogo);
+}
+.header__icon:hover{
+    transform: scale(1.1);
+}
+.header__icon:hover #gradienteLogo{
+    fill: url(#gradienteLogo);
+    transform: rotate(160deg);
+    transition: all 0.5s ease;
 }
 
 .header__titulo {
@@ -57,6 +71,7 @@
 }
 .menu__toggle:hover {
     color: #00d2ff;
+    transform: scale(1.1);
 }
 
 
