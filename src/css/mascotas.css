@@ -60,10 +60,12 @@ a {
     box-shadow: 0 0 15px var(--color-dorado-dark)
 }
 
+
+
 header {
     width: 100%;
     font-family: var(--font-destacada);
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     letter-spacing: -0.02em;
     color: var(--color-font-claro);
     display: flex;
@@ -74,8 +76,6 @@ header {
     background-color:var(--color-header);
     backdrop-filter: blur(10px);
     box-shadow: 0 0 15px rgb(107, 106, 106);
-    /* para hacer que el header se mantenga fijo en la parte superior */
-    /*version sticky*/
     position: sticky;
     top: 0; 
     z-index: 1000;
@@ -96,19 +96,23 @@ header {
     display: inline-block;
     margin-left: 0.5rem;
     text-align: center;
-}
-.header__titulo:hover {
+
     background: 
         linear-gradient(120deg, 
             transparent 0%, 
             transparent 40%, 
-            rgba(255,255,255, 0.8) 50%, 
+            rgba(226, 26, 26, 0.8) 50%, 
             transparent 60%, 
             transparent 100%);
     background-clip: text;
     -webkit-background-clip: text;
-    
-    /* display: inline-block;
+    background-size: 200% 100%;
+    background-position: 150% 0; 
+}
+.header__titulo:hover {
+
+    transition: background-position 0.5s ease;
+    display: inline-block;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -120,7 +124,7 @@ header {
         #b38728,
         #fbf5b7,
         #aa771c
-    ); */
+    );
 }
 
 /*   -------   Navegación Menú   -------   */
@@ -166,6 +170,204 @@ header {
     border-radius: 5%;
     object-position: 50% 45%;
     margin: 0rem 0rem 1rem 0rem;
+}
+
+
+
+.featured {
+    padding: 3rem 0 4rem;
+    position: relative;
+  }
+
+  .carousel-wrapper {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+
+  .carousel {
+    position: relative;
+    height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1500px;
+  }
+
+  .carousel-item {
+    position: absolute;
+    width: 380px;
+    height: 460px;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+    box-shadow: var(--shadow-soft);
+    background: var(--card);
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .carousel-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .carousel-item.active::after { opacity: 1; }
+
+  .carousel-caption {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    color: white;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s ease 0.2s;
+  }
+
+  .carousel-item.active .carousel-caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .carousel-caption-name {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 0.35rem;
+  }
+
+  .carousel-caption-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  /* Carousel positions */
+  .carousel-item.pos-center {
+    transform: translateX(0) scale(1) rotateY(0deg);
+    z-index: 5;
+    opacity: 1;
+    box-shadow: var(--shadow-hover);
+  }
+  .carousel-item.pos-right-1 {
+    transform: translateX(300px) scale(0.88) rotateY(-15deg);
+    z-index: 4;
+    opacity: 0.85;
+  }
+  .carousel-item.pos-right-2 {
+    transform: translateX(540px) scale(0.75) rotateY(-22deg);
+    z-index: 3;
+    opacity: 0.55;
+  }
+  .carousel-item.pos-right-3 {
+    transform: translateX(720px) scale(0.65) rotateY(-28deg);
+    z-index: 2;
+    opacity: 0.25;
+  }
+  .carousel-item.pos-left-1 {
+    transform: translateX(-300px) scale(0.88) rotateY(15deg);
+    z-index: 4;
+    opacity: 0.85;
+  }
+  .carousel-item.pos-left-2 {
+    transform: translateX(-540px) scale(0.75) rotateY(22deg);
+    z-index: 3;
+    opacity: 0.55;
+  }
+  .carousel-item.pos-left-3 {
+    transform: translateX(-720px) scale(0.65) rotateY(28deg);
+    z-index: 2;
+    opacity: 0.25;
+  }
+  .carousel-item.pos-hidden {
+    transform: translateX(0) scale(0.5);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .carousel-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--ink);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    font-family: inherit;
+  }
+
+  .carousel-btn:hover {
+    background: var(--ink);
+    color: var(--bg);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .carousel-dots {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--line);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+  }
+
+  .dot.active {
+    background: var(--accent);
+    width: 24px;
+    border-radius: 3px;
+  }
+
+
+
+/* ---------- responsividad carrusel ---------- */
+@media (max-width: 768px) {
+.carousel { height: 440px; }
+    .carousel-item { width: 280px; height: 360px; }
+    .carousel-item.pos-right-1 { transform: translateX(210px) scale(0.85) rotateY(-15deg); }
+    .carousel-item.pos-right-2 { transform: translateX(360px) scale(0.7) rotateY(-22deg); opacity: 0.4; }
+    .carousel-item.pos-right-3, .carousel-item.pos-left-3 { opacity: 0; }
+    .carousel-item.pos-left-1 { transform: translateX(-210px) scale(0.85) rotateY(15deg); }
+    .carousel-item.pos-left-2 { transform: translateX(-360px) scale(0.7) rotateY(22deg); opacity: 0.4; }
+    .filters { gap: 0.75rem; }
+    .filter-btn { padding: 0.5rem 1.1rem 0.5rem 0.5rem; }
 }
 
 /* ------------------------------ Footer ------------------------------------*/
