@@ -50,6 +50,7 @@ function abrirModal(idProyecto) {
         // Evitamos que el fondo haga scroll mientras el modal está abierto
         document.body.style.overflow = "hidden";
     }
+
 }
 
 function cerrarModal() {

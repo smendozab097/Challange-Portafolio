@@ -30,10 +30,14 @@
 .header__icon:hover{
     transform: scale(1.1);
 }
+.header__icon #gradienteLogo {
+    transform: rotate(0deg);
+    transition: all 0.5s ease;
+}
 .header__icon:hover #gradienteLogo{
     fill: url(#gradienteLogo);
     transform: rotate(160deg);
-    transition: all 0.5s ease;
+    
 }
 
 .header__titulo {

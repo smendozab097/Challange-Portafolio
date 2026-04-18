@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/mascota.css">
+    <title>Mis Mascotas</title>
+</head>
+
+<body>
+    <!-- --------------- Header --------------- -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <svg class="header__icon" xmlns="http://www.w3.org/2000/svg" viewBox="10 20 495 470">
+                    <g>
+                        <linearGradient id="gradienteLogo" x1="0%" y1="100%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#bf953f; stop-opacity:1" />
+                            <stop offset="40%" style="stop-color:#fcf6ba; stop-opacity:1" />
+                            <stop offset="70%" style="stop-color:#b38728; stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:r#fbf5b7; stop-opacity:1" />
+                        </linearGradient>
+                        <path
+                            d="M 190.00 483.86 C186.98,483.36 179.10,480.40 172.50,477.29 C161.69,472.20 159.70,471.60 152.44,471.20 C144.53,470.78 144.10,470.88 130.03,476.49 C118.39,481.13 114.25,482.31 108.09,482.73 C94.16,483.68 81.50,478.64 72.14,468.43 C57.93,452.93 55.05,431.54 64.77,413.69 C68.47,406.88 113.64,360.08 121.50,354.90 C136.92,344.75 157.29,343.56 173.72,351.86 C182.05,356.07 183.37,357.29 210.70,386.37 C240.00,417.55 242.01,420.71 242.76,436.75 C243.15,444.95 242.87,447.53 241.03,452.95 C235.35,469.69 221.92,481.18 204.78,483.97 C197.71,485.11 197.58,485.11 190.00,483.86 ZM 38.22 376.93 C30.82,374.00 22.10,365.61 17.65,357.16 C8.10,338.99 9.14,319.02 20.20,307.96 C32.49,295.66 53.00,300.26 64.81,317.95 C70.77,326.88 73.15,333.98 73.75,344.60 C74.33,354.99 72.72,361.55 67.82,368.73 C61.63,377.80 49.15,381.26 38.22,376.93 ZM 244.79 376.86 C239.48,375.37 232.56,368.85 229.37,362.32 C226.08,355.59 225.01,343.07 226.97,334.13 C229.95,320.49 239.31,307.45 249.81,302.29 C254.31,300.08 256.86,299.51 262.00,299.54 C272.75,299.60 279.55,304.39 284.63,315.50 C293.61,335.11 283.33,365.33 264.56,374.52 C258.54,377.46 250.36,378.43 244.79,376.86 ZM 100.82 330.48 C94.25,328.37 85.80,320.38 82.01,312.67 C80.34,309.28 78.24,302.90 77.34,298.50 C73.32,278.83 82.16,256.75 97.21,248.82 C103.01,245.77 114.66,245.60 120.50,248.47 C133.02,254.64 142.00,271.56 142.00,289.00 C142.00,306.19 133.30,322.73 120.94,329.03 C115.47,331.82 106.92,332.44 100.82,330.48 ZM 180.28 325.45 C156.64,313.67 151.61,272.58 171.32,252.17 C188.65,234.21 213.58,242.58 222.24,269.25 C225.16,278.26 225.10,293.23 222.10,301.89 C217.95,313.87 210.53,322.79 201.62,326.51 C195.86,328.92 186.28,328.44 180.28,325.45 ZM 403.63 268.91 C399.97,268.37 393.21,265.89 385.63,262.31 L 373.50 256.57 L 363.50 256.55 C353.85,256.52 353.15,256.68 343.50,260.90 C331.21,266.29 325.14,267.97 317.96,267.99 C300.16,268.03 284.47,257.62 276.25,240.31 C272.95,233.37 272.51,231.49 272.17,223.01 C271.74,211.92 273.86,204.03 279.55,195.55 C281.42,192.77 294.10,179.17 307.72,165.32 C330.87,141.80 332.99,139.92 340.00,136.64 C357.08,128.64 374.56,129.53 390.83,139.24 C397.45,143.18 444.73,192.93 449.71,201.18 C457.72,214.46 457.95,232.13 450.31,246.17 C446.99,252.28 437.88,261.01 431.43,264.28 C422.62,268.75 413.17,270.32 403.63,268.91 ZM 251.19 161.85 C236.25,156.12 224.05,136.45 224.01,118.07 C223.97,93.65 241.98,79.61 261.51,88.84 C286.12,100.49 295.40,139.45 277.69,156.81 C270.40,163.96 261.22,165.71 251.19,161.85 ZM 457.79 161.86 C452.75,160.45 445.43,153.79 442.45,147.90 C441.10,145.24 439.51,139.78 438.92,135.78 C436.23,117.54 447.05,95.23 462.50,87.17 C469.79,83.37 479.64,83.41 486.22,87.27 C501.17,96.06 505.24,119.22 495.43,139.69 C487.50,156.23 471.42,165.70 457.79,161.86 ZM 314.22 115.53 C304.68,112.55 296.91,104.16 291.97,91.50 C289.99,86.43 289.63,83.72 289.65,74.00 C289.68,61.19 291.38,54.76 297.11,45.83 C308.14,28.63 328.49,26.14 342.25,40.30 C359.52,58.07 358.61,92.27 340.43,108.89 C332.27,116.34 323.75,118.51 314.22,115.53 ZM 393.50 110.64 C380.59,104.59 372.04,88.60 372.01,70.46 C371.97,40.16 394.56,19.72 416.33,30.37 C428.92,36.53 437.00,52.01 437.00,69.97 C437.00,84.44 433.48,94.34 425.16,103.29 C419.07,109.83 412.36,112.98 404.50,112.98 C400.30,112.98 397.00,112.28 393.50,110.64 Z" />
+                    </g>
+                </svg>
+                <span>Mis <em>Mascotas</em></span>
+            </a>
+            <nav class="nav">
+                <a href="#featured">Destacadas</a>
+                <a href="#gallery">Galería</a>
+                <a href="#about">Sobre nosotros</a>
+                <a href="../../index.html">Ir a Portafolio</a>
+            </nav>
+            <button class="menu__toggle">
+            ☰
+            </button>
+        </div>
+    </header>
+
+    <!-- --------------- Hero --------------- -->
+    <section class="hero">
+        <span class="hero-eyebrow">Álbum familiar · Mascotas</span>
+        <h1>Momentos con <em>Luke, Kikin</em> y <em>Titi</em></h1>
+        <p>Una colección de instantes cotidianos y miradas eternas de los tres pequeños grandes
+            protagonistas de la casa.</p>
+    </section>
+
+    <!-- --------------- Carrusel --------------- -->
+    <section class="featured" id="featured">
+        <div class="section-header">
+            <h2 class="section-title">Fotos <em>destacadas</em></h2>
+            <span class="section-count">07 · FAVORITAS</span>
+        </div>
+
+        <div class="carousel-wrapper">
+            <div class="carousel" id="carousel">
+                <div class="carousel-item" data-index="0">
+                    <img src="/public/imgs/Kikin_picaro.webp" alt="Kikin mirada">
+                    <div class="carousel-caption">
+                        <div class="carousel-caption-name">KIKIN · Schnauzer Mini</div>
+                        <div class="carousel-caption-title">Mirada de schnauzer</div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-index="1">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&h=1000&fit=crop"
+                        alt="Titi descanso">
+                    <div class="carousel-caption">
+                        <div class="carousel-caption-name">TITI · Gato Mestizo</div>
+                        <div class="carousel-caption-title">Descanso dorado</div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-index="2">
+                    <img src="/public/imgs/Luke_vetana.jpg" alt="Luke brisa">
+                    <div class="carousel-caption">
+                        <div class="carousel-caption-name">LUKE · Maltes - French</div>
+                        <div class="carousel-caption-title">Buenas hay boli?</div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-index="3">
+                    <img src="/public/imgs/Kikin_piscina.jpg" alt="Kikin aventurero">
+                    <div class="carousel-caption">
+                        <div class="carousel-caption-name">KIKIN · Schnauzer Mini</div>
+                        <div class="carousel-caption-title">Corazón aventurero</div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-index="4">
+                    <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=800&h=1000&fit=crop"
+                        alt="Titi sigilo">
+                    <div class="carousel-caption">
+                        <div class="carousel-caption-name">TITI · Gato Mestizo</div>
+                        <div class="carousel-caption-title">Sigilo de seda</div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-index="5">
+                    <img src="/public/imgs/Luke_puff_balcon.jpeg" alt="Luke nube">
+                    <div class="carousel-caption">
+                        <div class="carousel-caption-name">LUKE · Maltes - French</div>
+                        <div class="carousel-caption-title">Nube blanca</div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-index="6">
+                    <img src="/public/imgs/Kikin_cansado.jpg" alt="Kikin sofá">
+                    <div class="carousel-caption">
+                        <div class="carousel-caption-name">KIKIN · Schnauzer Mini</div>
+                        <div class="carousel-caption-title">Descanso merecido</div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-index="7">
+                    <img src="/public/imgs/Luke_bonsai.jpeg" alt="Titi sigilo">
+                    <div class="carousel-caption">
+                        <div class="carousel-caption-name">LUKE · PERRO</div>
+                        <div class="carousel-caption-title">Protector o destructor?</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-nav">
+                <button class="carousel-btn" id="prevBtn" aria-label="Anterior">←</button>
+                <div class="carousel-dots" id="dots"></div>
+                <button class="carousel-btn" id="nextBtn" aria-label="Siguiente">→</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider">
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- --------------- GALLERY --------------- -->
+    <section class="gallery-section" id="gallery">
+
+        <!-- --------------- Logica de filtrado con css --------------- -->
+        <input type="radio" name="filter" id="filter-all" class="filter-radio" checked>
+        <input type="radio" name="filter" id="filter-kikin" class="filter-radio">
+        <input type="radio" name="filter" id="filter-luke" class="filter-radio">
+        <input type="radio" name="filter" id="filter-titi" class="filter-radio">
+
+        <div class="section-header">
+            <h2 class="section-title">La <em>galería</em> completa</h2>
+            <span class="section-count">15 · FOTOS</span>
+        </div>
+
+        <!-- --------------- Filtros --------------- -->
+        <div class="filters">
+            <label class="filter-btn" for="filter-all">
+                <div class="filter-icon-wrap"><img src="/public/icons/paws_pets.svg" alt=""></div>
+                <div class="filter-label">
+                    <span class="filter-name">Todas</span>
+                    <span class="filter-count">Mostrar Todo</span>
+                </div>
+            </label>
+            <label class="filter-btn" for="filter-kikin">
+                <div class="filter-icon-wrap"><img src="/public/icons/Kikin.png" alt="Kikin"></div>
+                <div class="filter-label">
+                    <span class="filter-name">Kikin</span>
+                    <span class="filter-count">Schnauzer Mini</span>
+                </div>
+            </label>
+            <label class="filter-btn" for="filter-luke">
+                <div class="filter-icon-wrap"><img src="/public/icons/Luke.png" alt="Luke"></div>
+                <div class="filter-label">
+                    <span class="filter-name">Luke</span>
+                    <span class="filter-count">Maltes - French</span>
+                </div>
+            </label>
+            <label class="filter-btn" for="filter-titi">
+                <div class="filter-icon-wrap"><img src="/public/icons/Titi.png" alt="Titi"></div>
+                <div class="filter-label">
+                    <span class="filter-name">Titi</span>
+                    <span class="filter-count">Gato Mestizo</span>
+                </div>
+            </label>
+        </div>
+
+        <!-- --------------- Grid de galeria --------------- -->
+        <div class="gallery">
+            <article class="photo-card" data-pet="kikin">
+                <div class="photo-media">
+                    <img src="/public/imgs/Kikin_piscina.jpg"
+                        alt="Kikin siesta" loading="lazy">
+                    <div class="photo-tag">
+                        <div class="photo-tag-icon"><img src="/public/icons/Kikin.png" alt=""></div>
+                        <span>Kikin</span>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">Aventura en la naturaleza</h3>
+                    <p class="photo-desc">Un dia de aventuras en Usiacurí, resignado a que no lo dejaban meterse en la piscina "natural"</p>
+                </div>
+            </article>
+
+            <article class="photo-card" data-pet="luke">
+                <div class="photo-media">
+                    <img src="/public/imgs/Luke_bonsai.jpeg"
+                        alt="Luke paseo" loading="lazy">
+                    <div class="photo-tag">
+                        <div class="photo-tag-icon"><img src="/public/icons/Luke.png" alt=""></div>
+                        <span>Luke</span>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">Protector o destructor?</h3>
+                    <p class="photo-desc">Después de que sus juegos partieran la maceta del bonsai, ahora es su protector.</p>
+                </div>
+            </article>
+
+            <article class="photo-card" data-pet="titi">
+                <div class="photo-media">
+                    <img src="https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?w=600&h=750&fit=crop"
+                        alt="Titi ventana" loading="lazy">
+                    <div class="photo-tag">
+                        <div class="photo-tag-icon"><img src="/public/icons/Titi.png" alt=""></div>
+                        <span>Titi</span>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">Reina de la ventana</h3>
+                    <p class="photo-desc">Las tardes de Titi transcurren observando el mundo desde su trono preferido.
+                    </p>
+                </div>
+            </article>
+
+            <article class="photo-card" data-pet="kikin">
+                <div class="photo-media">
+                    <img src="/public/imgs/Kikin_velando.jpg"
+                        alt="Kikin cazador" loading="lazy">
+                    <div class="photo-tag">
+                        <div class="photo-tag-icon"><img src="/public/icons/Kikin.png" alt=""></div>
+                        <span>Kikin</span>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">El velador de la noche</h3>
+                    <p class="photo-desc">Sus ojos brillantes y mirada penetrante te obligan a darle de lo que estes comiendo.</p>
+                </div>
+            </article>
+
+            <article class="photo-card" data-pet="luke">
+                <div class="photo-media">
+                    <img src="/public/imgs/Luke_sonriendo.jpg"
+                        alt="Luke sonrisa" loading="lazy">
+                    <div class="photo-tag">
+                        <div class="photo-tag-icon"><img src="/public/icons/Luke.png" alt=""></div>
+                        <span>Luke</span>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">Sonrisa inocente</h3>
+                    <p class="photo-desc">Luke tiene la sonrisa más contagiosa cuando sabe que viene una caricia.</p>
+                </div>
+            </article>
+
+            <article class="photo-card" data-pet="titi">
+                <div class="photo-media">
+                    <img src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?w=600&h=750&fit=crop"
+                        alt="Titi sol" loading="lazy">
+                    <div class="photo-tag">
+                        <div class="photo-tag-icon"><img src="/public/icons/Titi.png" alt=""></div>
+                        <span>Titi</span>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">Estirándose al sol</h3>
+                    <p class="photo-desc">Ningún rayo de sol pasa desapercibido para esta gatita dorada.</p>
+                </div>
+            </article>
+
+            <article class="photo-card" data-pet="kikin">
+                <div class="photo-media">
+                    <img src="/public/imgs/Kikin_picaro.webp"
+                        alt="Kikin mirada" loading="lazy">
+                    <div class="photo-tag">
+                        <div class="photo-tag-icon"><img src="/public/icons/Kikin.png" alt=""></div>
+                        <span>Kikin</span>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">Mirada conquistadora</h3>
+                    <p class="photo-desc">El sabe como conquistarte, incluso cuando te resistes.</p>
+                </div>
+            </article>
+
+            <article class="photo-card" data-pet="luke">
+                <div class="photo-media">
+                    <img src="/public/imgs/Luke_puff_balcon.jpeg"
+                        alt="Luke bosque" loading="lazy">
+                    <div class="photo-tag">
+                        <div class="photo-tag-icon"><img src="/public/icons/Luke.png" alt=""></div>
+                        <span>Luke</span>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">Momento de chisme y descanso</h3>
+                    <p class="photo-desc">Si buscas relajarte y saber que pasa a tu alrededor, Luke conoce el mejor lugar para hacerlo.</p>
+                </div>
+            </article>
+
+            <article class="photo-card" data-pet="titi">
+                <div class="photo-media">
+                    <img src="https://images.unsplash.com/photo-1513245543132-31f507417b26?w=600&h=750&fit=crop"
+                        alt="Titi curiosa" loading="lazy">
+                    <div class="photo-tag">
+                        <div class="photo-tag-icon"><img src="/public/icons/Titi.png" alt=""></div>
+                        <span>Titi</span>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">Curiosidad felina</h3>
+                    <p class="photo-desc">Cada caja, cada bolsa, cada rincón nuevo merece una inspección seria.</p>
+                </div>
+            </article>
+
+            <article class="photo-card" data-pet="kikin">
+                <div class="photo-media">
+                    <img src="/public/imgs/Kikin_saboreando.jpeg"
+                        alt="Kikin fiel" loading="lazy">
+                    <div class="photo-tag">
+                        <div class="photo-tag-icon"><img src="/public/icons/Kikin.png" alt=""></div>
+                        <span>Kikin</span>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">Comida detectada!</h3>
+                    <p class="photo-desc">No importa donde esté, Kikin siempre detecta y saborea la comida antes de probarla.</p>
+                </div>
+            </article>
+
+            <article class="photo-card" data-pet="luke">
+                <div class="photo-media">
+                    <img src="/public/imgs/Luke_vetana.jpg"
+                        alt="Luke corazón" loading="lazy">
+                    <div class="photo-tag">
+                        <div class="photo-tag-icon"><img src="/public/icons/Luke.png" alt=""></div>
+                        <span>Luke</span>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">Que estas haciendo?</h3>
+                    <p class="photo-desc">Cuando menos te lo esperas puedes encontrarlo curiosiando y chismoseando lo que haces.</p>
+                </div>
+            </article>
+
+            <article class="photo-card" data-pet="titi">
+                <div class="photo-media">
+                    <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=600&h=750&fit=crop"
+                        alt="Titi sueño" loading="lazy">
+                    <div class="photo-tag">
+                        <div class="photo-tag-icon"><img src="/public/icons/Titi.png" alt=""></div>
+                        <span>Titi</span>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">Bigotes de ensueño</h3>
+                    <p class="photo-desc">En pleno sueño, las patitas se mueven como si persiguiera algo lejano.</p>
+                </div>
+            </article>
+
+            <article class="photo-card" data-pet="kikin">
+                <div class="photo-media">
+                    <img src="/public/imgs/Kikin_cansado.jpg"
+                        alt="Kikin fiel" loading="lazy">
+                    <div class="photo-tag">
+                        <div class="photo-tag-icon"><img src="/public/icons/Kikin.png" alt=""></div>
+                        <span>Kikin</span>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">Descanso merecido</h3>
+                    <p class="photo-desc">No importa donde esté, Kikin siempre detecta y saborea la comida antes de probarla.</p>
+                </div>
+            </article>
+
+            <article class="photo-card" data-pet="luke">
+                <div class="photo-media">
+                    <img src="/public/imgs/Luke_recien_llegado.jpg"
+                        alt="Luke corazón" loading="lazy">
+                    <div class="photo-tag">
+                        <div class="photo-tag-icon"><img src="/public/icons/Luke.png" alt=""></div>
+                        <span>Luke</span>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">Que estas haciendo?</h3>
+                    <p class="photo-desc">Cuando menos te lo esperas puedes encontrarlo curiosiando y chismoseando lo que haces.</p>
+                </div>
+            </article>
+
+            <article class="photo-card" data-pet="titi">
+                <div class="photo-media">
+                    <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=600&h=750&fit=crop"
+                        alt="Titi sueño" loading="lazy">
+                    <div class="photo-tag">
+                        <div class="photo-tag-icon"><img src="/public/icons/Titi.png" alt=""></div>
+                        <span>Titi</span>
+                    </div>
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">Bigotes de ensueño</h3>
+                    <p class="photo-desc">En pleno sueño, las patitas se mueven como si persiguiera algo lejano.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo"> <a href="../../index.html"> Porta<em>folio</em></a></div>
+            <div class="footer-tag">HECHO CON CARIÑO · PARA KIKIN, LUKE Y TITI</div>
+            <div class="footer-copy">© 2026 — Cada foto es un recuerdo que dura para siempre.</div>
+        </div>
+    </footer>
+<script type="module" src="/src/js/carrusel.js"></script>
+</body>
+
+</html>
