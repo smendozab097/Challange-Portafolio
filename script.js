@@ -1,4 +1,7 @@
 
+document.addEventListener("DOMContentLoaded", () => {
+
+
 const misProyectos = {
         outlier: {
             titulo: "AI Content Evaluator - Outlier",
@@ -63,3 +66,5 @@ document.addEventListener('keydown', (event) => {
         cerrarModal();
     }
 });
+
+})

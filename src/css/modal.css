@@ -24,7 +24,7 @@
 }
 .modal_img{
     width:90%; 
-    border-radius:1rem; 
+    border-radius:1.5rem; 
     margin-bottom:1rem;
 }
 /* El botón de cerrar (la X) */
@@ -45,8 +45,10 @@
 
 @media (min-width: 768px) {
     .modal_img{
-    width:20rem; 
-    border-radius:1rem; 
-    margin-bottom:1rem;
-}
+        display: flex;
+        justify-self: center;
+        width:20rem; 
+        border-radius:2rem; 
+        margin-bottom:1rem;
+    }
 }
