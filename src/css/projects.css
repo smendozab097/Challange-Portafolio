@@ -1,23 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /*------------------------------ Sección de Proyectos --------------------------------*/
 .proyectos {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0rem;
     margin: 4rem 3rem;
+}
+.proyectos__grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 columna móvil */
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    justify-items: center;
 }
 .proyectos__lista {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 1rem;
-    padding: 0rem;
 }
 .proyectos__contenedor {
     display: flex; /* Alineamos contenido en línea */
     flex-direction: column; /* Por defecto en móvil, uno bajo otro */
     gap: 1rem;
-    padding: 2rem;
+    padding: 1rem;
     margin-bottom: 1.5rem;
     align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -51,20 +63,19 @@
 
 @media (min-width: 768px) {
 
-    .proyectos__contenedor {
-        height: 19rem;
-        flex-direction: row; /* Imagen y texto lado a lado */
-        align-items: center; /* Alineamos al inicio para que el texto quede a la derecha de la imagen */
-        gap: 2rem; /* Espacio entre imagen y texto */
+    .proyectos__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 3rem;
     }
     .proyectos__images {
-        width: 40%;
+        width: 60%;
     }
     #affinityApp, #encriptador, #pongGame {
-    width: 60%;
+    width: 80%;
     height: auto;
     object-fit: contain;
     border-radius: 8px;
+
 }
 
 }
@@ -74,19 +85,17 @@
 @media (min-width: 1024px) {
 
     .proyectos__contenedor {
-        height: 20rem;
-        width: 55rem;
-        flex-direction: row; 
-        align-items: center; 
-        justify-content: space-between;
-        padding: 3rem;
-        gap: 2rem; 
+        max-width: 26rem; /* Evita que las cards se vuelvan gigantes horizontalmente */
+    }
+    .proyectos__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem 2rem
     }
     .proyectos__images {
-        width: 16rem;
+        width: 14rem;
     }
     #affinityApp, #encriptador, #pongGame {
-    width: 25rem;
+    width: 22rem;
     height: auto;
     object-fit: contain;
     border-radius: 8px;

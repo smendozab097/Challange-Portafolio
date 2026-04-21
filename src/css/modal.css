@@ -2,33 +2,36 @@
 .modal {
     display: none; /* Oculto por defecto */
     position: fixed;
-    z-index: 1000; /* Siempre por encima de todo el chasis */
+    z-index: 2000; /* Siempre por encima de todo el chasis */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Oscurece el fondo */
+    background-color: rgba(28, 30, 30, 0.842); /* Oscurece el fondo */
     backdrop-filter: blur(8px); /* Desenfoque extra para el fondo */
     justify-content: center;
     align-items: center;
 }
 
 /* El contenedor del contenido (tu glass-card) */
-.modal-content {
+.modal_content {
     position: relative;
     width: 90%;
-    max-width: 800px;
-    max-height: 80vh;
+    max-width: 40rem;
     overflow-y: auto; /* Si el texto es largo, permite scroll interno */
-    padding: 2.5rem;
+    padding: 2rem;
     animation: slideIn 0.4s ease-out; /* Animación de entrada */
 }
-
+.modal_img{
+    width:90%; 
+    border-radius:1rem; 
+    margin-bottom:1rem;
+}
 /* El botón de cerrar (la X) */
-.close-button {
+.close_button {
     position: absolute;
-    top: 15px;
-    right: 20px;
+    top: 1rem;
+    right: 1.5rem;
     font-size: 2rem;
     color: var(--color-neon-azul);
     cursor: pointer;
@@ -36,6 +39,14 @@
 
 /* Animación para que el modal no aparezca de golpe */
 @keyframes slideIn {
-    from { transform: translateY(-50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@media (min-width: 768px) {
+    .modal_img{
+    width:20rem; 
+    border-radius:1rem; 
+    margin-bottom:1rem;
+}
 }
