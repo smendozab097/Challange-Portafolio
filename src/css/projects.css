@@ -14,23 +14,16 @@
 .proyectos__grid {
     display: grid;
     grid-template-columns: 1fr; /* 1 columna móvil */
-    gap: 2rem;
+    gap: 3rem;
     width: 100%;
     max-width: 1200px;
     justify-items: center;
-}
-.proyectos__lista {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 1rem;
 }
 .proyectos__contenedor {
     display: flex; /* Alineamos contenido en línea */
     flex-direction: column; /* Por defecto en móvil, uno bajo otro */
     gap: 1rem;
     padding: 1rem;
-    margin-bottom: 1.5rem;
     align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -65,7 +58,12 @@
 
     .proyectos__grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem 3rem;
+        gap: 3rem 0rem;
+    }
+    .proyectos__contenedor {
+        width: 100%;
+        height: 17rem;
+        max-width: 17rem; /* Evita que las cards se vuelvan gigantes horizontalmente */
     }
     .proyectos__images {
         width: 60%;
@@ -85,19 +83,16 @@
 @media (min-width: 1024px) {
 
     .proyectos__contenedor {
-        max-width: 26rem; /* Evita que las cards se vuelvan gigantes horizontalmente */
+        max-width: 25rem;
     }
     .proyectos__grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 1rem 2rem
+        gap: 1rem 
     }
     .proyectos__images {
-        width: 14rem;
+        width: 9rem;
     }
     #affinityApp, #encriptador, #pongGame {
-    width: 22rem;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
+    width: 14rem;
     }
 }
