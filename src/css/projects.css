@@ -16,7 +16,6 @@
     grid-template-columns: 1fr; /* 1 columna móvil */
     gap: 3rem;
     width: 100%;
-    max-width: 1200px;
     justify-items: center;
 }
 .proyectos__contenedor {
@@ -57,8 +56,9 @@
 @media (min-width: 768px) {
 
     .proyectos__grid {
+        max-width: 80%;
         grid-template-columns: repeat(2, 1fr);
-        gap: 3rem 0rem;
+        gap: 3rem;
     }
     .proyectos__contenedor {
         width: 100%;
@@ -69,12 +69,14 @@
         width: 60%;
     }
     #affinityApp, #encriptador, #pongGame {
-    width: 80%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
-
-}
+        width: 80%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+    #affinityApp, #encriptador{
+        margin-top: 1.5rem;
+    }
 
 }
 
@@ -86,13 +88,23 @@
         max-width: 25rem;
     }
     .proyectos__grid {
+        max-width: 1200px;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1rem 
+        gap: 2rem 
     }
     .proyectos__images {
         width: 9rem;
     }
     #affinityApp, #encriptador, #pongGame {
-    width: 14rem;
+        width: 14rem;
+    }
+    #affinityApp, #encriptador{
+        margin-top: 2.5rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .proyectos__grid {
+        gap: 4rem 
     }
 }
