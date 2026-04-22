@@ -698,6 +698,10 @@ body {
     letter-spacing: 0.1em;
     margin-bottom: 1.25rem;
 }
+.footer-tag em {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+}
 
 .footer-copy {
     font-size: 0.75rem;
