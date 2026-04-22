@@ -6,28 +6,39 @@ const misProyectos = {
         outlier: {
             titulo: "AI Content Evaluator - Outlier",
             descripcion: "Este fue un empleo como freelancer en la plataforma de Outlier en el cual participe en el entrenamiento y evaluación de modelos de inteligencia articificial o LLM. En este pude poner un poco a prueba mis conocimientos en desarrollo web, pero en general se trató de evaluar las respuestas de los modelos a partir de unas rubricas diseñadas para establecer la respuesta correcta al prompt que se les proporcionaba.",
-            imagen: "public/imgs/Outlier_logo.png"
+            imagen: "public/imgs/Outlier_logo.png",
+            clase: ""
         },
         upwork: {
             titulo: "Operator Support Agent - Upwork",
             descripcion: "Trabajé Durante 2 años como operator support agent para una empresa Estadounidense a traves de la Plataforma de Upwork, la cual es una plataforma para freelancers. Fue en esta epoca donde comencé a sentirme atraido por el mundo de la programación e inicié un curso de programación.",
-            imagen: "public/imgs/Upwork_logo.png"
+            imagen: "public/imgs/Upwork_logo.png",
+            clase: ""
         },
         affinity: {
             titulo: "App Red Social - Mascotas",
             descripcion: "Es una app de red social para dueños de mascotas que desarrollé durante mi formación de programación con MinTIC. Este fue mi primer proyecto creado en Android Studio durante mi aprendizaje en desarrollo de aplicaciones móviles, fue un reto bastante desafiante para mi que apenas iniciaba en este mundo, pero así mismo fue emocionante y enriquecedor.",
-            imagen: "public/imgs/Affinity_app.png"
+            imagen: "public/imgs/Affinity_app.png",
+            clase: "img_large"
         },
         encriptador: {
             titulo: "Encriptador de Texto",
             descripcion: "Este fue mi primer proyecto desarrollado con Alura, en el cual se debia encriptar o desencriptar un texto, está desarrollado en HTML, CSS y JavaScript. Fue una experiencia con la que pude aprender sobre el desarrollo web al desarrollar el reto por mi cuenta.",
-            imagen: "public/imgs/encriptador.png"
+            imagen: "public/imgs/encriptador.png",
+            clase: "img_large"
         },
         juego: {
             titulo: "Juego de Pong",
-            descripcion: "Este fue un proyecto desarrollado con Alura haciendo uso de las IA's como chat GPT o Copilot, la idea era desarrollar un juego usando de base, guia o ayuda un codigo generado por la inteligencia artificial y de ahí implementar las correcciones o mejoras necesarias. Fue una experiencia bastante interesante y pude ver la utilidad de las IA's en el desarrollo web.",
-            imagen: "public/imgs/pong_game.png"
+            descripcion: "Este fue un proyecto desarrollado con Alura haciendo uso de las IA's como chat GPT o Copilot, la idea era desarrollar un juego usando de base, guía o ayuda un código generado por la inteligencia artificial y de ahí implementar las correcciones o mejoras necesarias. Fue una experiencia bastante interesante y pude ver la utilidad de las IA's en el desarrollo web.",
+            imagen: "public/imgs/pong_game.png",
+            clase: "img_large"
         },
+        alura:{
+            titulo:"Proyecto AluraFlix",
+            descripcion: "Este fue mi proyecto final cuando estuve en Alura, en el usé react para su construcción. Es una página inspirada en Netflix en la cual se pueden ver vídeos de desarrollo web de alura, de manera similar a la que lo hacemos en Netflix.",
+            imagen: "public/imgs/Aluraflix.png",
+            clase: "img_large"
+        }
 
 
 };
@@ -45,7 +56,7 @@ document.querySelectorAll(".btn_abrir_modal").forEach(boton => {
         const info = misProyectos[idProyecto];
 
         modalBody.innerHTML = `
-            <img src="${info.imagen}" class="modal_img" alt="${info.titulo}" ">
+            <img src="${info.imagen}" class="modal_img ${info.clase}" alt="${info.titulo}" ">
             <h2 class="titulos">${info.titulo}</h2>
             <p class="textos">${info.descripcion}</p>
         `;

@@ -27,6 +27,12 @@
     border-radius:1.5rem; 
     margin-bottom:1rem;
 }
+.img_large{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius:0.5rem; 
+}
 /* El botón de cerrar (la X) */
 .close_button {
     position: absolute;
@@ -51,4 +57,20 @@
         border-radius:2rem; 
         margin-bottom:1rem;
     }
+    .img_large{
+        width: 90%;
+        border-radius:0.5rem; 
+    }
+
+
+}
+
+@media (min-width: 1024px) {
+    .img_large{
+        width: 30rem;
+
+        
+}
+
+
 }

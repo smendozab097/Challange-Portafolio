@@ -38,7 +38,7 @@
     border-radius: 25px;
 }
 
-#affinityApp, #encriptador, #pongGame {
+#affinityApp, #encriptador, #pongGame, #aluraflix {
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -68,13 +68,13 @@
     .proyectos__images {
         width: 60%;
     }
-    #affinityApp, #encriptador, #pongGame {
+    #affinityApp, #encriptador, #pongGame,#aluraflix {
         width: 80%;
         height: auto;
         object-fit: contain;
         border-radius: 8px;
     }
-    #affinityApp, #encriptador{
+    #affinityApp, #encriptador, #aluraflix{
         margin-top: 1.5rem;
     }
 
@@ -95,10 +95,10 @@
     .proyectos__images {
         width: 9rem;
     }
-    #affinityApp, #encriptador, #pongGame {
+    #affinityApp, #encriptador, #pongGame, #aluraflix {
         width: 14rem;
     }
-    #affinityApp, #encriptador{
+    #affinityApp, #encriptador, #aluraflix{
         margin-top: 2.5rem;
     }
 }
