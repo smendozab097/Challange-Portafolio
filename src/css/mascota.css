@@ -488,7 +488,8 @@ body {
 #filter-all:checked ~ .filters label[for="filter-all"],
 #filter-kikin:checked ~ .filters label[for="filter-kikin"],
 #filter-luke:checked ~ .filters label[for="filter-luke"],
-#filter-titi:checked ~ .filters label[for="filter-titi"] {
+#filter-titi:checked ~ .filters label[for="filter-titi"],
+#filter-bingo:checked ~ .filters label[for="filter-bingo"] {
     background: var(--font-color);
     border-color: var(--font-color);
     color: var(--bkgd);
@@ -498,7 +499,8 @@ body {
 #filter-all:checked ~ .filters label[for="filter-all"] .filter-icon-wrap,
 #filter-kikin:checked ~ .filters label[for="filter-kikin"] .filter-icon-wrap,
 #filter-luke:checked ~ .filters label[for="filter-luke"] .filter-icon-wrap,
-#filter-titi:checked ~ .filters label[for="filter-titi"] .filter-icon-wrap {
+#filter-titi:checked ~ .filters label[for="filter-titi"] .filter-icon-wrap,
+#filter-bingo:checked ~ .filters label[for="filter-bingo"] .filter-icon-wrap {
     background: var(--bkgd);
 }
 
@@ -571,7 +573,8 @@ body {
 /* CSS-only filter */
 .gallery-section:has(#filter-kikin:checked) .photo-card:not([data-pet="kikin"]),
 .gallery-section:has(#filter-luke:checked) .photo-card:not([data-pet="luke"]),
-.gallery-section:has(#filter-titi:checked) .photo-card:not([data-pet="titi"]) {
+.gallery-section:has(#filter-titi:checked) .photo-card:not([data-pet="titi"]),
+.gallery-section:has(#filter-bingo:checked) .photo-card:not([data-pet="bingo"]) {
     display: none;
 }
 
