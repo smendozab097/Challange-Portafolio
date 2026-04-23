@@ -57,8 +57,8 @@ body {
     top: 0;
     z-index: 100;
     background: rgba(18, 15, 13, 0.925);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow:
         0 8px 32px rgba(0, 0, 0, 0.25),
@@ -105,13 +105,30 @@ body {
 }
 
 /* Nav — oculto en móvil */
-.nav {
+/* .navegacion {
     display: none;
     gap: 2rem;
     align-items: center;
-}
+} */
+ .navegacion {
+    position: absolute;
+    top: 2.5rem; 
+    right: 0px;
+    width: 10rem;
+    height: 10rem;
+    padding: 1rem;
+    background: rgba(18, 15, 13, 0.925);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 15px; 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: all 0.3s ease;
+    display: none; /* Apagado por defecto */
+    z-index: 1000;
+ }
 
-.nav a {
+.navegacion a {
     color: rgba(250, 246, 240, 0.75);
     text-decoration: none;
     font-size: 0.92rem;
@@ -121,11 +138,11 @@ body {
     position: relative;
 }
 
-.nav a:hover {
+.navegacion a:hover {
     color: #faf6f0;
 }
 
-.nav a::after {
+.navegacion a::after {
     content: '';
     position: absolute;
     bottom: -6px;
@@ -136,7 +153,7 @@ body {
     transition: width 0.3s ease;
 }
 
-.nav a:hover::after {
+.navegacion a:hover::after {
     width: 100%;
 }
 
@@ -155,13 +172,20 @@ body {
     transform: scale(1.1);
 }
 
+.navegacion.nav--active {
+    /* display: block; */ /* O transform: translateX(0); */
+    display: flex;
+    flex-direction: column; 
+    gap: 0.5rem
+}
+
 /* ============================================
    HERO — Mobile base
    ============================================ */
 .hero {
     max-width: var(--section-max-width);
     margin: 0 auto;
-    padding: 3rem var(--section-padding-x) 2rem;
+    padding: 1.5rem var(--section-padding-x) 1rem;
     text-align: center;
 }
 
@@ -204,7 +228,7 @@ body {
    ============================================ */
 .section-header {
     max-width: var(--section-max-width);
-    margin: 0 auto 2rem;
+    margin: 0 auto 1rem;
     padding: 0 var(--section-padding-x);
     display: flex;
     align-items: baseline;
@@ -238,7 +262,7 @@ body {
    ============================================ */
 .divider {
     max-width: var(--section-max-width);
-    margin: 2rem auto;
+    margin: 1.5rem auto;
     padding: 0 var(--section-padding-x);
 }
 
@@ -251,7 +275,7 @@ body {
    CAROUSEL — Mobile base
    ============================================ */
 .featured {
-    padding: 2rem 0 3rem;
+    padding: 2rem 0 1rem;
     position: relative;
     overflow: hidden;
 }
@@ -441,7 +465,7 @@ body {
    GALLERY SECTION — Mobile base
    ============================================ */
 .gallery-section {
-    padding: 3rem 0 4rem;
+    padding: 2rem 0 4rem;
 }
 
 /* Radio inputs ocultos (filtro CSS-only) */
@@ -722,9 +746,6 @@ body {
 
 /* ---------- sm: 480px ---------- */
 @media (min-width: 480px) {
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
     .carousel-item {
         width: 260px;
@@ -795,7 +816,7 @@ body {
     }
 
     .hero {
-        padding: 4rem var(--section-padding-x) 2.5rem;
+        padding: 2.8rem var(--section-padding-x) 2rem;
     }
 
     .hero p {
@@ -894,7 +915,7 @@ body {
     }
 
     .gallery-section {
-        padding: 3.5rem 0 5rem;
+        padding: 3rem 0 5rem;
     }
 
     .filters {
@@ -915,8 +936,18 @@ body {
     }
 
     /* Header: mostrar nav, ocultar hamburguesa */
-    .nav {
-        display: flex;
+    .navegacion {
+        width: auto;
+        height: auto; 
+        position: static;
+        padding: 0;
+        gap: 1.8rem;
+        display: flex !important;
+        backdrop-filter: none;
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
+        border-radius: 0;
     }
 
     .menu__toggle {
@@ -934,7 +965,7 @@ body {
 
     /* Hero desktop */
     .hero {
-        padding: 5rem var(--section-padding-x) 3rem;
+        padding: 3rem var(--section-padding-x) 1rem;
     }
 
     .hero-eyebrow {
@@ -1024,7 +1055,7 @@ body {
     }
 
     .featured {
-        padding: 3rem 0 4rem;
+        padding: 2rem 0 3rem;
     }
 
     /* Gallery desktop */

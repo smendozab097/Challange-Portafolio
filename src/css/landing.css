@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 1rem 2rem 2rem 2rem;
+    margin: 3rem 2rem 4rem 2rem;
 }
 .presentacion__titulo {
     font-weight: bold;
@@ -216,7 +216,11 @@
 } 
 
 @media (min-width: 1440px) {
-    .presentacion__contenedor { 
+    .presentacion {
+        margin: 5rem 4rem;
+    }
+    .presentacion__contenedor {
+        margin-bottom: 1rem; 
         justify-content: space-between;
         
     }
@@ -226,6 +230,10 @@
         border-radius: 15%;
         object-position: 50% 30%;
         margin: 0rem 0rem 1rem 0rem;
+    }
+    .redes {
+        max-width: 17rem;
+        margin-left: 2rem;
     }
 
     .signature{
