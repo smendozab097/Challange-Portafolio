@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Fuente del Proyecto Raleway -->
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Space+Grotesk:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <title>Mi Portafolio</title>
     <meta name="description" content="Portafolio personal de Sebastian Mendoza Brieva, un ingeniero mecánico en transición al desarrollo web. Descubre mis skills-hobbies, proyectos y experiencia en el mundo del desarrollo web.">
     <meta name="keywords" content="Portafolio, Desarrollo Web, Ingeniero Mecánico, skills-hobbies, Proyectos, Experiencia, HTML, CSS, JavaScript">
@@ -51,9 +51,9 @@
                 <li class="nav_item"><a class="nav__buttons" href="#contactMe">Contacto</a></li> 
             </ul>
         </nav>
-        <a href="" class="menu__toggle">
+        <button class="menu__toggle" aria-label="Abrir menú">
             ☰
-        </a>
+        </button>
     </header> 
     <main>
         <!-- ---------------------------------  Sección de Presentación  --------------------------------- -->
@@ -332,7 +332,7 @@
                 </article>
 
                 <article class="proyectos__contenedor glass-card">
-                    <img class="proyectos__images" id="aluraflix" src="public/imgs/Aluraflix.png" alt="Aluraflix">
+                    <img class="proyectos__images" id="aluraflix" src="public/imgs/Aluraflix.webp" alt="Aluraflix">
                     <div class="contenedor__detalles">
                         <h3 class="proyectos__nombre">Proyecto Aluraflix</h3>
                     </div>
@@ -376,5 +376,6 @@
 
 
 </body>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <script src="src/js/menuHamburguesa.js" defer></script>
 </html>

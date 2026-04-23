@@ -49,17 +49,34 @@
 
 /*   -------   Navegación Menú   -------   */
 .navegacion {
-    margin-left: auto;
-    display: none; /* Ocultar la navegación en pantallas pequeñas */
+    position: absolute;
+    top: 2.5rem; 
+    right: 0px;
+    width: 10rem;
+    /* background-color: rgba(0, 0, 0, 0.778);
+    backdrop-filter: blur(10px); */
+    background: rgba(3, 21, 21, 0.679); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 15px; 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: all 0.3s ease;
+    display: none; /* Apagado por defecto */
+    z-index: 1000;
 }
 
 .navegacion__lista {
+    text-align: center;
+    padding: 1rem;
     list-style: none;
     display: flex;
-    gap: 1.3rem; 
+    flex-direction: column;
+    gap: 0.8rem; 
 }
-.nav_item .nav__buttons {
+.nav__buttons {
     font-size: 0.8rem;
+    font-weight: bold;
     
 }
 .nav_item .nav__buttons:hover {
@@ -78,7 +95,9 @@
     transform: scale(1.1);
 }
 
-
+.navegacion.nav--active {
+    display: block; /* O transform: translateX(0); */
+}
 
 
 /* ------------------------------ Responsividad ---------------------------------------*/
@@ -96,6 +115,14 @@
 
     .header__titulo {
         font-size: 1.5rem;
+    }
+
+    .navegacion{
+        width: 15rem;
+    }
+    .nav_item .nav__buttons {
+    font-size: 1rem;
+    font-weight: 400;
     }
 }
 
@@ -121,11 +148,18 @@
 
     /*   -------   Navegación Menú   -------   */
     .navegacion {
+        width: 100%;
+        max-width: 35rem;
+        position: static;
         display: flex;
+        backdrop-filter: none;
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
+    }
+    .navegacion__lista{
         flex-direction: row;
-        gap: 1rem;
-        margin-left: auto;
-        margin-top: 0;
+        gap: 1.3rem;
     }
 
     .menu__toggle{
