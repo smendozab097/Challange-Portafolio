@@ -43,14 +43,24 @@
         <h1 class="header__titulo">Sebastian Mendoza Brieva</h1>
         <nav class="navegacion">
             <ul class="navegacion__lista">
-                <li class="nav_item"><a class="nav__buttons" href="#sobre-mi">Sobre mí</a></li>
-                <li class="nav_item"><a class="nav__buttons" href="#skills">Habilidades</a></li>
-                <li class="nav_item"><a class="nav__buttons" href="#hobbies">Aficiones</a></li>
-                <li class="nav_item"><a class="nav__buttons" href="#formacion">Formación</a></li>
-                <li class="nav_item"><a class="nav__buttons" href="#proyectos">Proyectos</a></li>
-                <li class="nav_item"><a class="nav__buttons" href="#contactMe">Contacto</a></li> 
+                <li class="nav_item"><a class="nav__buttons" href="#sobre-mi" data-lang="nav_sobre">Sobre mí</a></li>
+                <li class="nav_item"><a class="nav__buttons" href="#skills" data-lang="nav_skills">Habilidades</a></li>
+                <li class="nav_item"><a class="nav__buttons" href="#hobbies" data-lang="nav_hobbies">Aficiones</a></li>
+                <li class="nav_item"><a class="nav__buttons" href="#formacion" data-lang="nav_formacion">Formación</a></li>
+                <li class="nav_item"><a class="nav__buttons" href="#proyectos" data-lang="nav_proyectos">Proyectos</a></li>
+                <li class="nav_item"><a class="nav__buttons" href="#contactMe" data-lang="nav_contacto">Contacto</a></li> 
             </ul>
         </nav>
+        <button class="btn__idioma" id="btn__idioma">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m5 8 6 6" />
+                <path d="m4 14 6-6 2-3" />
+                <path d="M2 5h12" />
+                <path d="M7 2h1" />
+                <path d="m22 22-5-10-5 10" />
+                <path d="M14 18h6" />
+            </svg>
+        </button>
         <button class="menu__toggle" aria-label="Abrir menú">
             ☰
         </button>
@@ -60,12 +70,12 @@
         <section class="presentacion">
 
             <h1 class="presentacion__titulo">Sebastian Mendoza Brieva</h1>
-            <h2 class="presentacion__subtitulo">Web Dev & Mechanical Engineer</h2>
+            <h2 class="presentacion__subtitulo" data-lang="subtitulo">Web Dev & Mechanical Engineer</h2>
             
             <div class="presentacion__contenedor">
                 <img class="presentacion__foto" src="public/imgs/Profile_nbg_SMB.png" alt="Foto de perfil">                
                 <div id="div__container">
-                    <p class="textos" id="texto__presentacion">Ingeniero Mecánico en transicion al mundo del desarrollo web, he participado en algunos programas como Oracle ONE en conjunto con Alura Latam y entrenamientos empresariales como Riwi.</p>
+                    <p class="textos" id="texto__presentacion" data-lang="presentacion">Ingeniero Mecánico en transicion al mundo del desarrollo web, he participado en algunos programas como Oracle ONE en conjunto con Alura Latam y entrenamientos empresariales como Riwi.</p>
                 <!-- Firma -------------------------------- -->
                 <svg class="signature" xmlns="http://www.w3.org/2000/svg" viewBox="140 400 750 180">
                     <defs>
@@ -152,16 +162,20 @@
     
         <!-- ---------------------------------  Sección sobre mí  --------------------------------- -->
         <section class="sobre-mi" id="sobre-mi">
-            <h2 class="titulos">Sobre mí</h2>
-            <p class="textos">Soy un ingeniero mecanico que no hace mucho entro al mundo del desarrollo web después de ver un poco de lo que se puede hacer en este campo. Tuve mi primera interaccion con la programación al participar en un diplomado de fundamentos de programacion, con esto decidí que mi nuevo camino sería con el desarrollo web. Luego entre a un programa de Oracle llamado Oracle Next Education (ONE) en el cual pude desarrollar un poco más mis skills-hobbies como Web Dev y aprendí algo de base de datos, github y uso de la IA a lo largo de mi estancia en el programa. <br><br>
-            Disfruto aplicar la lógica y la  creatividad, por lo que tener la oportunidad de incursionar en el mundo de la programación es emocionante para mí. Actualmente hago parte del entrenamiento como desarrolladores que ofrece Riwi.
+            <h2 class="titulos" data-lang="titulo_sobre">Sobre mí</h2>
+            <p class="textos" data-lang="texto_sobre">Soy un ingeniero mecanico que no hace mucho entro al mundo del desarrollo web después de ver un poco de lo que se puede hacer en este campo. 
+                Tuve mi primera interaccion con la programación al participar en un diplomado de fundamentos de programacion, con esto decidí que mi nuevo camino sería con el desarrollo web. 
+                Luego entre a un programa de Oracle llamado Oracle Next Education (ONE) en el cual pude desarrollar un poco más mis skills-hobbies como Web Dev y aprendí algo de base de datos, 
+                github y uso de la IA a lo largo de mi estancia en el programa. <br><br>
+                Disfruto aplicar la lógica y la  creatividad, por lo que tener la oportunidad de incursionar en el mundo de la programación es emocionante para mí. 
+                Actualmente hago parte del entrenamiento como desarrolladores que ofrece Riwi.
             </p>
             
         </section>
 
         <!-- ---------------------------------  Sección de Habilidades  --------------------------------- -->
         <section class="skills-hobbies" id="skills">
-            <h2 class="titulos">Habilidades</h2>
+            <h2 class="titulos" data-lang="titulo_skills">Habilidades</h2>
 
             <ul class="skills-hobbies__lista">
 
@@ -201,38 +215,38 @@
 
         <!-- ---------------------------------  Sección de Aficiones  --------------------------------- -->
         <section class="skills-hobbies" id="hobbies">
-            <h2 class="titulos">Aficiones</h2>
+            <h2 class="titulos" data-lang="titulo_hobbies">Aficiones</h2>
             <ul class="skills-hobbies__lista">
 
                 <li class="skills-hobbies__elemento glass-card">
                     
                     <img class="skills-hobbies__icono"  src="public/imgs/ciclismo.png" alt="Patinaje">
-                    <p class="skills-hobbies__nombre">Ciclismo</p>
+                    <p class="skills-hobbies__nombre" data-lang="hobby_ciclismo">Ciclismo</p>
                 </li>
 
                 <li class="skills-hobbies__elemento glass-card">
                     <img class="skills-hobbies__icono" src="public/imgs/videojuegos.png" alt="Tocar bajo">
-                    <p class="skills-hobbies__nombre">Videojuegos</p>
+                    <p class="skills-hobbies__nombre" data-lang="hobby_videojuegos">Videojuegos</p>
                 </li>
 
                 <li class="skills-hobbies__elemento glass-card">
                     <img class="skills-hobbies__icono" src="public/imgs/arte.png" alt="Oír música">
-                    <p class="skills-hobbies__nombre">Pintar</p>
+                    <p class="skills-hobbies__nombre" data-lang="hobby_pintar">Pintar</p>
                 </li>
 
                 <li class="skills-hobbies__elemento glass-card">
                     <img class="skills-hobbies__icono" src="public/imgs/pelicula.png" alt="Ver series">
-                    <p class="skills-hobbies__nombre">Ver series</p>
+                    <p class="skills-hobbies__nombre" data-lang="hobby_series">Ver series</p>
                 </li>
 
                 <li class="skills-hobbies__elemento glass-card">
                     <img class="skills-hobbies__icono" src="public/imgs/viaje.png" alt="Cocinar">
-                    <p class="skills-hobbies__nombre">Viajar</p>
+                    <p class="skills-hobbies__nombre" data-lang="hobby_viajar">Viajar</p>
                 </li>
 
                 <li class="skills-hobbies__elemento glass-card">
                     <img class="skills-hobbies__icono" src="public/imgs/senderismo.png" alt="Tomar fotos">
-                    <p class="skills-hobbies__nombre">Senderismo</p>
+                    <p class="skills-hobbies__nombre" data-lang="hobby_senderismo">Senderismo</p>
                 </li>
 
             </ul>
@@ -241,7 +255,7 @@
         <!-- ---------------------------------  Sección de Formación académica  --------------------------------- -->
         <section class="formacion" id="formacion">
 
-            <h2 class="titulos">Formación académica</h2>
+            <h2 class="titulos" data-lang="titulo_formacion">Formación académica</h2>
 
             <ul id="cards" class="formacion__lista">
 
@@ -252,7 +266,7 @@
                             <img src="public/imgs/Oracle_ONE_logo.png" alt="Oracle ONE">
                         </div>
                         <div class="formacion__descripcion">
-                            <h3 class="formacion__nombre">Desarrollo Web - Front end</h3>
+                            <h3 class="formacion__nombre" data-lang="formacion_ONE">Desarrollo Web - Front end</h3>
                             <p class="formacion__detalle">2025 - Alura Latam / Oracle ONE</p>
                         </div>
                     </div>
@@ -262,7 +276,7 @@
                     <div class="formacion__contenedor">
                         <img class="formacion__image" src="public/imgs/UA_logo.png" alt="Universidad del Atlantico">
                         <div class="formacion__descripcion">
-                            <h3 class="formacion__nombre">Ingeniería Mecánica</h3>
+                            <h3 class="formacion__nombre" data-lang="formacion_UA">Ingeniería Mecánica</h3>
                             <p class="formacion__detalle">2023 - Universidad del Atlántico</p>
                         </div>
                     </div>
@@ -273,7 +287,7 @@
                     <div class="formacion__contenedor">
                         <img class="formacion__image" src="public/imgs/UninorteLogo.png" alt="UniNorte">
                         <div class="formacion__descripcion">
-                            <h3 class="formacion__nombre">Diplomado en programación Básica & Software Development</h3>
+                            <h3 class="formacion__nombre" data-lang="formacion_uninorte">Diplomado en programación Básica & Software Development</h3>
                             <p class="formacion__detalle">2021 - Universidad del Norte</p>
                         </div>
                     </div>
@@ -285,7 +299,7 @@
         <!-- ---------------------------------  Sección de Proyectos  --------------------------------- -->
         <section class="proyectos" id="proyectos">
 
-            <h2 class="titulos">Experiencia Profesional y Proyectos</h2>
+            <h2 class="titulos" data-lang="titulo_proyectos">Experiencia Profesional y Proyectos</h2>
 
             <div class="proyectos__grid">
                 <article class="proyectos__contenedor glass-card">
@@ -293,7 +307,7 @@
                     <div>
                         <h3 class="proyectos__nombre">AI Content Evaluator</h3>
                     </div>
-                    <button class="contacto__boton btn_abrir_modal" data-proyecto="outlier">Ver más</button>
+                    <button class="contacto__boton btn_abrir_modal" data-proyecto="outlier" data-lang="btn_ver">Ver más</button>
                 </article>
 
                 <article class="proyectos__contenedor glass-card">
@@ -301,42 +315,42 @@
                     <div class="contenedor__detalles">
                         <h3 class="proyectos__nombre">Operator Support Agent</h3>
                     </div>
-                    <button class="contacto__boton btn_abrir_modal" data-proyecto="upwork">Ver más</button>
+                    <button class="contacto__boton btn_abrir_modal" data-proyecto="upwork" data-lang="btn_ver">Ver más</button>
 
                 </article>
 
                 <article class="proyectos__contenedor glass-card">
                     <img class="proyectos__images" id="affinityApp" src="public/imgs/Affinity_app.png" alt="App Affinity">
                     <div class="contenedor__detalles">   
-                        <h3 class="proyectos__nombre">Affinity Pet - App movil</h3>
+                        <h3 class="proyectos__nombre" data-lang="proyecto_affinity">Affinity Pet - App movil</h3>
                     </div>
-                    <button class="contacto__boton btn_abrir_modal" data-proyecto="affinity">Ver más</button>
+                    <button class="contacto__boton btn_abrir_modal" data-proyecto="affinity" data-lang="btn_ver">Ver más</button>
 
                 </article>
 
                 <article class="proyectos__contenedor glass-card">
                     <img class="proyectos__images" id="encriptador" src="public/imgs/encriptador.png" alt="encriptador de texto">
                     <div class="contenedor__detalles">
-                        <h3 class="proyectos__nombre">Encriptador de texto</h3>
+                        <h3 class="proyectos__nombre" data-lang="proyecto_encriptador">Encriptador de texto</h3>
                     </div>
-                    <button class="contacto__boton btn_abrir_modal" data-proyecto="encriptador">Ver más</button>        
+                    <button class="contacto__boton btn_abrir_modal" data-proyecto="encriptador" data-lang="btn_ver">Ver más</button>        
                 </article>
 
                 <article class="proyectos__contenedor glass-card">
                     <img class="proyectos__images" id="pongGame" src="public/imgs/pong_game.png" alt="juego de pong">
                     <div class="contenedor__detalles">
-                        <h3 class="proyectos__nombre">Juego de Pong</h3>
+                        <h3 class="proyectos__nombre" data-lang="proyecto_pong">Juego de Pong</h3>
                     </div>
-                    <button class="contacto__boton btn_abrir_modal" data-proyecto="juego">Ver más</button>
+                    <button class="contacto__boton btn_abrir_modal" data-proyecto="juego" data-lang="btn_ver">Ver más</button>
 
                 </article>
 
                 <article class="proyectos__contenedor glass-card">
                     <img class="proyectos__images" id="aluraflix" src="public/imgs/Aluraflix.webp" alt="Aluraflix">
                     <div class="contenedor__detalles">
-                        <h3 class="proyectos__nombre">Proyecto Aluraflix</h3>
+                        <h3 class="proyectos__nombre" data-lang="proyecto_aluraflix">Proyecto Aluraflix</h3>
                     </div>
-                    <button class="contacto__boton btn_abrir_modal" data-proyecto="alura">Ver más</button>
+                    <button class="contacto__boton btn_abrir_modal" data-proyecto="alura" data-lang="btn_ver">Ver más</button>
 
                 </article>
             </div>
@@ -346,16 +360,16 @@
         <!-- ---------------------------------  Sección de Contacto  --------------------------------- -->
         
         <section id="contactMe">
-            <h2 class="titulos">Contacto</h2>
+            <h2 class="titulos" data-lang="titulo_contacto">Contacto</h2>
             <div class="contacto__contenedor ">
                 <div class="contacto__detalles">
-                    <p class="textos" id="contactText">Estoy disponible para discutir <strong>nuevas oportunidades</strong> y <strong>proyectos</strong> <em>¡Enviame un mensaje!</em> </p>
+                    <p class="textos" id="contactText" data-lang="texto_contacto">Estoy disponible para discutir <strong>nuevas oportunidades</strong> y <strong>proyectos</strong> <em>¡Enviame un mensaje!</em> </p>
                     <form id="contacto__formulario">
-                        <input class="contacto__campo" type="text" placeholder="Nombre">
-                        <input class="contacto__campo" type="email" placeholder="Correo Electrónico">
-                        <input class="contacto__campo" type="text" placeholder="Asunto">
-                        <textarea id="text_area" class="contacto__campo " placeholder="Mensaje"></textarea>
-                        <button class="contacto__boton" type="submit">Enviar</button>
+                        <input class="contacto__campo" type="text" placeholder="Nombre" data-lang-placeholder="ph_nombre">
+                        <input class="contacto__campo" type="email" placeholder="Correo Electrónico" data-lang-placeholder="ph_email">
+                        <input class="contacto__campo" type="text" placeholder="Asunto" data-lang-placeholder="ph_asunto">
+                        <textarea id="text_area" class="contacto__campo " placeholder="Mensaje" data-lang-placeholder="ph_mensaje"></textarea>
+                        <button class="contacto__boton" type="submit" data-lang="btn_enviar">Enviar</button>
                     </form>
                 </div>                
                 <img src="public/icons/contact-us.svg" alt="contacto" class="contacto__imagen">
@@ -374,9 +388,11 @@
         </div>
     </div>
 
-<script type="module" src="src/js/Modal.js"></script>
-<script type="module" src="src/js/menuHamburguesa.js"></script>
+
 <script type="module" src="src/js/toast.js"></script>
+<script type="module" src="src/js/menuHamburguesa.js"></script>
+<script type="module" src="src/js/cambioIdioma.js"></script>
+<script type="module" src="src/js/Modal.js"></script>
 </body>
     
 </html>

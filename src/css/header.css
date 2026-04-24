@@ -26,6 +26,7 @@
     height: 100%;
     object-fit: contain;
     fill: url(#gradienteLogo);
+    transition: all 0.3s ease;
 }
 .header__icon:hover{
     transform: scale(1.1);
@@ -48,28 +49,14 @@
 }
 
 /*   -------   Navegación Menú   -------   */
-/* .navegacion {
-    position: absolute;
-    top: 2.5rem; 
-    right: 0px;
-    width: 10rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1); 
-    border-radius: 15px; 
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    transition: all 0.3s ease;
-    display: none; 
-    z-index: 1000;
-} */
+
  .navegacion {
-    display: none; /* La pieza está desmontada por defecto */
+    display: none; /* No se muestra en pantallas pequeñas */
     position: absolute;
     top: 100%; /* Se despliega justo debajo del header */
-    right: 0;
+    right: 0; /* Se alinea a la derecha del header */
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo sólido para que no se trasluzca el contenido */
+    background-color: rgba(0, 0, 0, 0.5); 
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
@@ -100,13 +87,27 @@
     border: none;
     color: #cce0fd;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 .menu__toggle:hover {
-    color: #00d2ff;
     transform: scale(1.1);
 }
 
+.btn__idioma {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #cce0fd;
+    padding: 0.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
+.btn__idioma:hover {
+    transform: scale(1.1);
+}
 
 
 /* ------------------------------ Responsividad ---------------------------------------*/

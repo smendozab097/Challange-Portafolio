@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const botonHamburguesa = document.querySelector('.menu__toggle');
     const menuNavegacion = document.querySelector('.navegacion');
 
-    // 2. Comprobación (Multímetro)
+    // 2. Comprobación de que funciona
     if (botonHamburguesa && menuNavegacion) {
         console.log("✅ Sistema eléctrico conectado: Botón y Menú encontrados.");
     } else {
