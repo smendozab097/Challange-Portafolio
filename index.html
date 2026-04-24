@@ -366,11 +366,12 @@
             <div class="contacto__contenedor ">
                 <div class="contacto__detalles">
                     <p class="textos" id="contactText" data-lang="texto_contacto">Estoy disponible para discutir <strong>nuevas oportunidades</strong> y <strong>proyectos</strong> <em>¡Enviame un mensaje!</em> </p>
-                    <form id="contacto__formulario">
-                        <input class="contacto__campo" type="text" placeholder="Nombre" data-lang-placeholder="ph_nombre">
-                        <input class="contacto__campo" type="email" placeholder="Correo Electrónico" data-lang-placeholder="ph_email">
-                        <input class="contacto__campo" type="text" placeholder="Asunto" data-lang-placeholder="ph_asunto">
-                        <textarea id="text_area" class="contacto__campo " placeholder="Mensaje" data-lang-placeholder="ph_mensaje"></textarea>
+                    <form id="contacto__formulario" action="https://formspree.io/f/xzdyyodl" method="POST">
+                        <input type="hidden" name="_next" value="smendozab097.github.io">
+                        <input class="contacto__campo" type="text" name="nombre" placeholder="Nombre" data-lang-placeholder="ph_nombre" required>
+                        <input class="contacto__campo" type="email" name="email" placeholder="Correo Electrónico" data-lang-placeholder="ph_email" required>
+                        <input class="contacto__campo" type="text" name="asunto" placeholder="Asunto" data-lang-placeholder="ph_asunto" required>
+                        <textarea id="text_area" class="contacto__campo " name="mensaje" placeholder="Mensaje" data-lang-placeholder="ph_mensaje" required></textarea>
                         <button class="contacto__boton" type="submit" data-lang="btn_enviar">Enviar</button>
                     </form>
                 </div>                
