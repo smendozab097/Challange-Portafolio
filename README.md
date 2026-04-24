@@ -1,7 +1,7 @@
 # Challenge ONE | Front End -  Portafolio
 
 
-### ¡Bienvenido al proyecto del Challange Portafolio! :
+### ¡Bienvenido a mi Portafolio! :
 ---
 #### Este es mi proyecto final y te invito a que le eches un ojo ⭐
 #### Si te gusta o tienes sugerencias estoy abierto a escucharlas 📚
@@ -10,12 +10,7 @@
 ---
 
 
-
-User: Analiza mi proyecto y generame un readme profesional 
-
-Workspace: Recopilando información del área de trabajo# Portafolio de Sebastian Mendoza Brieva
-
-Un portafolio web moderno y responsivo que showcasea mi transición desde la ingeniería mecánica hacia el desarrollo web, incluyendo una sección dedicada a mis mascotas.
+Un portafolio web moderno y responsivo que showcasea mi transición desde la ingeniería mecánica hacia el desarrollo web, incluyendo una sección/galería dedicada a mis mascotas.
 
 ## 🌟 Características Principales
 
@@ -47,30 +42,43 @@ Un portafolio web moderno y responsivo que showcasea mi transición desde la ing
 ```
 project/
 ├── index.html              # Página principal del portafolio
-├── script.js               # Lógica de modales y proyectos
 ├── README.md
 ├── public/
 │   ├── icons/             # Iconos SVG y PNG
 │   └── imgs/              # Imágenes de proyectos y mascotas
 ├── src/
 │   ├── css/
-│   │   ├── styles.css           # Hoja de estilos principal
-│   │   ├── mascota.css          # Estilos para sección de mascotas
-│   │   ├── header.css           # Navegación y header
-│   │   ├── landing.css          # Sección de presentación
-│   │   ├── aboutMe.css          # Sobre mí
-│   │   ├── skills-hobbies.css   # Habilidades y aficiones
-│   │   ├── formation.css        # Formación académica
-│   │   ├── projects.css         # Proyectos profesionales
-│   │   ├── contactMe.css        # Formulario de contacto
-│   │   ├── modal.css            # Estilos de modales
-│   │   ├── mascotas/            # CSS específico de mascotas
-│   │   └── principal/           # CSS principal
+│   │   ├── mascotas/            # Carpeta de estilos para pagina Mis mascotas
+|   |   |       ├── stylesMascotas.css              # Hoja de estilos principal
+│   │   |       ├── headerPets.css                  # Header y navegacion
+│   │   |       ├── hero.css                        # hero
+│   │   |       ├── estilosTitulosSeccion.css       # estilos titulos
+│   │   |       ├── destacadasCarrusel.css          # carrusel fotos destacadas
+│   │   |       ├── carruselNav.css                 # navegacion del carrusel
+│   │   |       ├── divider.css                     # componente divider
+│   │   |       ├── seccionGaleria.css              # Seccion principal galeria
+│   │   |       ├── filtrosGaleria.css              # Filtros de foto en galeria
+│   │   |       ├── gridGaleria.css                 # grid de fotos en galeria
+│   │   |       └── footer.css                      # footer
+│   │   └── portafolio/           # CSS principal
+|   |           ├── styles.css           # Hoja de estilos principal
+│   │           ├── mascota.css          # Estilos para sección de mascotas
+│   │           ├── header.css           # Navegación y header
+│   │           ├── landing.css          # Sección de presentación
+│   │           ├── aboutMe.css          # Sobre mí
+│   │           ├── skills-hobbies.css   # Habilidades y aficiones
+│   │           ├── formation.css        # Formación académica
+│   │           ├── projects.css         # Proyectos profesionales
+│   │           ├── contactMe.css        # Formulario de contacto
+│   │           └── modal.css            # Estilos de modales
 │   ├── js/
-│   │   ├── carrusel.js          # Funcionalidad del carrusel 3D
-│   │   └── menuHamburguesa.js   # Toggle del menú móvil
+|   |   ├── toast.js               # Lógica para el toast con el mensaje de bienvenida
+|   |   ├── cambioIdioma.js        # Lógica para cambio de idioma En-Es & Es-En para toda la pagina
+|   |   ├── Modal.js               # Lógica de modales y proyectos
+│   │   ├── carrusel.js            # Funcionalidad del carrusel 3D
+│   │   └── menuHamburguesa.js     # Toggle del menú móvil
 │   └── views/
-│       └── mascota.html         # Página completa de mascotas
+│       └── mascotas.html         # Página completa de mascotas
 ```
 
 ## 🛠️ Tecnologías Utilizadas
