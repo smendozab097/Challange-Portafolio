@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error("❌ Error de ensamblaje: No se encontraron las clases. Revisa tu HTML.");
     }
 
-    // 3. Instalamos el actuador (El Event Listener)
+    // 3. Actuador (El Event Listener)
     botonHamburguesa.addEventListener('click', (e) => {
         // Evitamos cualquier comportamiento por defecto (por si acaso)
         e.preventDefault(); 

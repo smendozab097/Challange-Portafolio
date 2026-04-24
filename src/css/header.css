@@ -56,6 +56,7 @@
     top: 100%; /* Se despliega justo debajo del header */
     right: 0; /* Se alinea a la derecha del header */
     width: 100%;
+    max-width: 12rem;
     background-color: rgba(0, 0, 0, 0.5); 
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -80,7 +81,12 @@
 .nav_item .nav__buttons:hover {
     color: #00d2ff; 
   }
-
+.header__actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
 .menu__toggle{
     font-size: 1.5rem;
     background: none;
@@ -117,7 +123,6 @@
 @media (min-width: 768px) {
 
     .header {
-        flex-direction: row;
         width: 100%;
         justify-content: space-between;
         align-items: center;
@@ -131,7 +136,7 @@
         width: 15rem;
     }
     .nav_item .nav__buttons {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 400;
     }
 }
@@ -142,9 +147,9 @@
 
     /* Aquí puedes ajustar aún más el diseño para pantallas grandes */
     .header {
-        flex-direction: row;
         justify-content: space-between;
         align-items: center;
+
     }
 
     .header__logo {
@@ -153,12 +158,14 @@
     
     .header__titulo {
         font-size: 1.8rem;
+        white-space: nowrap;       /* ← Que no se parta en dos líneas */
     }
 
 
     /*   -------   Navegación Menú   -------   */
     .navegacion {
-        width: auto;        
+        width: auto;
+        max-width: 25rem;        
         position: static;
         display: flex !important;
         backdrop-filter: none;
@@ -166,15 +173,22 @@
         background-color: transparent;
         box-shadow: none;
         border-radius: 0;
+        flex-shrink: 0;            /* ← No se comprime */
     }
     .navegacion__lista{
         flex-direction: row;
         align-items: center;
-        gap: 1.3rem;
+        gap: 1rem;
         padding: 0; /* Elimina el padding para pantallas grandes */
+        flex-wrap: nowrap; 
+    }
+    .header__actions {
+        gap: 0.3rem;
+        flex-shrink: 0; 
     }
 
-    .menu__toggle{
-        display: none; /* Ocultar el botón de menú en pantallas grandes */
+    .header__actions .menu__toggle {
+        display: none;
     }
+
 }

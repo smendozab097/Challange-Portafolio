@@ -32,10 +32,10 @@
     margin-top: 0.5rem;
     margin-left: 1.8rem;
 }
-.presentacion__parrafo {
-    font-size: 0.85rem;
-    text-align: justify;
-    line-height: 1.2;
+#texto__presentacion {
+    font-size: 0.8rem;
+    /* text-align: justify;*/
+    line-height: 1.25; 
 }
 
 .signature{
@@ -161,6 +161,7 @@
     
     #texto__presentacion {
         margin-left: 2rem;
+        font-size: 1rem;
     }
 
     .signature{
@@ -197,6 +198,9 @@
         border-radius: 15%;
         object-position: 50% 30%;
         margin: 0rem 0rem 1rem 0rem;
+    }
+    #texto__presentacion {
+        font-size: 1.2rem;
     }
 
     .signature{
