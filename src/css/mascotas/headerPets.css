@@ -1,0 +1,154 @@
+/* ============================================
+   HEADER — Mobile base
+   ============================================ */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(18, 15, 13, 0.925);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.25),
+        0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.header-inner {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0.75rem var(--section-padding-x);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: #faf6f0;
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.35rem;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+}
+
+.logo em {
+    font-style: italic;
+    color: var(--accent-soft);
+}
+
+.header__icon {
+    width: auto;
+    height: 1.2rem;
+    margin-top: 0.1rem;
+    fill: #faf6f0;
+    transition: fill 0.3s ease;
+}
+
+.header__icon:hover {
+    fill: url(#gradienteLogo);
+}
+
+ .navegacion {
+    position: absolute;
+    top: 2.5rem; 
+    right: 0px;
+    width: 10rem;
+    height: 10rem;
+    padding: 1rem;
+    background: rgba(18, 15, 13, 0.925);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 15px; 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: all 0.3s ease;
+    display: none; 
+    z-index: 1000;
+ }
+
+.navegacion a {
+    color: rgba(250, 246, 240, 0.75);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.navegacion a:hover {
+    color: #faf6f0;
+}
+
+.navegacion a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent-soft);
+    transition: width 0.3s ease;
+}
+
+.navegacion a:hover::after {
+    width: 100%;
+}
+
+/* Hamburguesa — visible en móvil */
+.menu__toggle {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: rgba(250, 246, 240, 0.75);
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu__toggle:hover {
+    color: #faf6f0;
+    transform: scale(1.1);
+}
+
+.navegacion.nav--active {
+    display: flex;
+    flex-direction: column; 
+    gap: 0.5rem
+}
+
+/* ---------- xl: 1024px ---------- */
+@media (min-width: 1024px) {
+    /* Header Desktop: mostrar nav, ocultar hamburguesa */
+    .navegacion {
+        width: auto;
+        height: auto; 
+        position: static;
+        padding: 0;
+        gap: 1.8rem;
+        display: flex !important;
+        backdrop-filter: none;
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .menu__toggle {
+        display: none;
+    }
+
+    .header-inner {
+        padding: 0.5rem 2rem;
+        gap: 2rem;
+    }
+
+    .logo {
+        font-size: 1.55rem;
+    }
+
+}

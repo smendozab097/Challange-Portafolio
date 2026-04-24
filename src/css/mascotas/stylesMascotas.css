@@ -1,0 +1,104 @@
+@import url('headerPets.css');
+@import url('hero.css');
+@import url('destacadasCarrusel.css');
+@import url('divider.css');
+@import url('seccionGaleria.css');
+@import url('footer.css');
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* Backgrounds */
+    --bkgd: #f6f2ec;
+    --bkgd-soft: #eee7dc;
+    --card: #fffbf5;
+
+    /* Typography */
+    --font-color: #1a1613;
+    --font-color-soft: #4a423c;
+    --muted: #8a7f74;
+
+    /* Accent */
+    --accent: #4a89c9;
+    --accent-soft: #96c0e8;
+
+    /* Borders & shadows */
+    --line: #d9cfc0;
+    --shadow-soft: 0 4px 20px rgba(26, 22, 19, 0.06);
+    --shadow-hover: 0 12px 40px rgba(26, 22, 19, 0.12);
+
+    /* Spacing (escala responsive) */
+    --section-padding-x: 1.25rem;
+    --section-max-width: 1400px;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: var(--bkgd);
+    color: var(--font-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-image:
+        radial-gradient(circle at 20% 10%, rgba(201, 123, 74, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(232, 184, 150, 0.05) 0%, transparent 45%);
+}
+
+.featured {
+    padding: 2rem 0 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ============================================
+   BREAKPOINTS — Mobile first (min-width)
+   
+   sm  → 480px   (móviles grandes)
+   md  → 640px   (tablets pequeñas)
+   lg  → 768px   (tablets)
+   xl  → 1024px  (desktop)
+   2xl → 1280px  (desktop grande)
+   3xl → 1536px  (pantallas amplias)
+   ============================================ */
+
+/* ---------- md: 640px ---------- */
+@media (min-width: 640px) {
+    :root {
+        --section-padding-x: 1.75rem;
+    }
+
+}
+
+/* ---------- lg: 768px ---------- */
+@media (min-width: 768px) {
+    :root {
+        --section-padding-x: 2rem;
+    }
+
+    .featured {
+        padding: 2.5rem 0 3.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --section-padding-x: 2.5rem;
+    }
+
+    .featured {
+        padding: 2rem 0 3rem;
+    }
+
+}

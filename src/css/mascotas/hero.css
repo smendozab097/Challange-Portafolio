@@ -1,0 +1,85 @@
+/* ============================================
+   HERO — Mobile base
+   ============================================ */
+.hero {
+    max-width: var(--section-max-width);
+    margin: 0 auto;
+    padding: 1.5rem var(--section-padding-x) 1rem;
+    text-align: center;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+}
+
+.hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 6vw, 4.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+    color: var(--font-color);
+}
+
+.hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+}
+
+.hero p {
+    font-size: 0.95rem;
+    color: var(--font-color-soft);
+    max-width: 560px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+/* ============================================
+   BREAKPOINTS — Mobile first (min-width)
+   
+   sm  → 480px   (móviles grandes)
+   md  → 640px   (tablets pequeñas)
+   lg  → 768px   (tablets)
+   xl  → 1024px  (desktop)
+   2xl → 1280px  (desktop grande)
+   3xl → 1536px  (pantallas amplias)
+   ============================================ */
+
+/* ---------- md: 640px ---------- */
+@media (min-width: 640px) {
+
+    .hero {
+        padding: 2.8rem var(--section-padding-x) 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+}
+
+/* ---------- xl: 1024px ---------- */
+@media (min-width: 1024px) {
+    /* Hero desktop */
+    .hero {
+        padding: 3rem var(--section-padding-x) 1rem;
+    }
+
+    .hero-eyebrow {
+        font-size: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1.05rem;
+    }
+
+}

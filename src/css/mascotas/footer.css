@@ -1,0 +1,91 @@
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background: var(--font-color);
+    color: rgba(250, 246, 240, 0.7);
+    padding: 2.5rem var(--section-padding-x);
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: var(--section-max-width);
+    margin: 0 auto;
+}
+
+.footer-logo {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    color: #faf6f0;
+    margin-bottom: 0.5rem;
+}
+
+.footer-logo a {
+    color: #fffbf5;
+    text-decoration: none;
+}
+
+.footer-logo em {
+    color: var(--accent-soft);
+    font-style: italic;
+}
+
+.footer-tag {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.25rem;
+}
+.footer-tag em {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+}
+
+.footer-copy {
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+}
+
+/* ============================================
+   BREAKPOINTS — Mobile first (min-width)
+   
+   sm  → 480px   (móviles grandes)
+   md  → 640px   (tablets pequeñas)
+   lg  → 768px   (tablets)
+   xl  → 1024px  (desktop)
+   2xl → 1280px  (desktop grande)
+   3xl → 1536px  (pantallas amplias)
+   ============================================ */
+
+/* ---------- lg: 768px ---------- */
+@media (min-width: 768px) {
+
+    .footer {
+        padding: 3rem var(--section-padding-x);
+        margin-top: 3.5rem;
+    }
+
+}
+
+/* ---------- xl: 1024px ---------- */
+@media (min-width: 1024px) {
+    /* Footer desktop */
+    .footer {
+        padding: 3rem 2.5rem;
+        margin-top: 4rem;
+    }
+
+    .footer-logo {
+        font-size: 1.4rem;
+    }
+
+    .footer-tag {
+        font-size: 0.85rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-copy {
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,46 @@
+@import url('estiloTitulosSeccion.css');
+@import url('filtrosGaleria.css');
+@import url('gridGaleria.css');
+
+/* ============================================
+   GALLERY SECTION — Mobile first
+   ============================================ */
+.gallery-section {
+    padding: 2rem 0 4rem;
+}
+
+/* Radio inputs ocultos (filtro CSS-only) */
+.filter-radio {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ============================================
+   BREAKPOINTS — Mobile first (min-width)
+   
+   sm  → 480px   (móviles grandes)
+   md  → 640px   (tablets pequeñas)
+   lg  → 768px   (tablets)
+   xl  → 1024px  (desktop)
+   2xl → 1280px  (desktop grande)
+   3xl → 1536px  (pantallas amplias)
+   ============================================ */
+
+/* ---------- lg: 768px ---------- */
+@media (min-width: 768px) {
+
+    .gallery-section {
+        padding: 3rem 0 5rem;
+    }
+
+}
+
+/* ---------- xl: 1024px ---------- */
+@media (min-width: 1024px) {
+
+    .gallery-section {
+        padding: 4rem 0 6rem;
+    }
+
+}

@@ -1,0 +1,344 @@
+@import url('estiloTitulosSeccion.css');
+@import url('carruselNav.css');
+
+.featured {
+    padding: 2rem 0 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-wrapper {
+    position: relative;
+    max-width: var(--section-max-width);
+    margin: 0 auto;
+    padding: 0 var(--section-padding-x);
+}
+
+.carousel {
+    position: relative;
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 240px;
+    height: 310px;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+    box-shadow: var(--shadow-soft);
+    background: var(--card);
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Overlay gradient */
+.carousel-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-item.active::after {
+    opacity: 1;
+}
+
+/* Caption */
+.carousel-caption {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    right: 1.25rem;
+    color: white;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s ease 0.2s;
+}
+
+.carousel-item.active .carousel-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.carousel-caption-name {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 0.25rem;
+}
+
+.carousel-caption-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+/* ============================================
+   CAROUSEL POSITIONS — Mobile (pequeño)
+   Solo mostramos center + 1 a cada lado
+   ============================================ */
+.carousel-item.pos-center {
+    transform: translateX(0) scale(1) rotateY(0deg);
+    z-index: 5;
+    opacity: 1;
+    box-shadow: var(--shadow-hover);
+}
+
+.carousel-item.pos-right-1 {
+    transform: translateX(160px) scale(0.82) rotateY(-12deg);
+    z-index: 4;
+    opacity: 0.7;
+}
+
+.carousel-item.pos-left-1 {
+    transform: translateX(-160px) scale(0.82) rotateY(12deg);
+    z-index: 4;
+    opacity: 0.7;
+}
+
+/* Ocultar el resto en móvil */
+.carousel-item.pos-right-2,
+.carousel-item.pos-right-3,
+.carousel-item.pos-left-2,
+.carousel-item.pos-left-3 {
+    transform: translateX(0) scale(0.6);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.carousel-item.pos-hidden {
+    transform: translateX(0) scale(0.5);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* ============================================
+   BREAKPOINTS — Mobile first (min-width)
+   
+   sm  → 480px   (móviles grandes)
+   md  → 640px   (tablets pequeñas)
+   lg  → 768px   (tablets)
+   xl  → 1024px  (desktop)
+   2xl → 1280px  (desktop grande)
+   3xl → 1536px  (pantallas amplias)
+   ============================================ */
+
+/* ---------- sm: 480px ---------- */
+@media (min-width: 480px) {
+
+    .carousel-item {
+        width: 260px;
+        height: 340px;
+    }
+
+    .carousel-item.pos-right-1 {
+        transform: translateX(180px) scale(0.85) rotateY(-12deg);
+    }
+
+    .carousel-item.pos-left-1 {
+        transform: translateX(-180px) scale(0.85) rotateY(12deg);
+    }
+
+}
+
+/* ---------- md: 640px ---------- */
+@media (min-width: 640px) {
+
+    .carousel {
+        height: 400px;
+        perspective: 1200px;
+    }
+
+    .carousel-item {
+        width: 300px;
+        height: 380px;
+        border-radius: 16px;
+    }
+
+    .carousel-item.pos-right-1 {
+        transform: translateX(220px) scale(0.86) rotateY(-14deg);
+        opacity: 0.8;
+    }
+
+    .carousel-item.pos-left-1 {
+        transform: translateX(-220px) scale(0.86) rotateY(14deg);
+        opacity: 0.8;
+    }
+
+    /* Mostramos segundo nivel */
+    .carousel-item.pos-right-2 {
+        transform: translateX(380px) scale(0.7) rotateY(-20deg);
+        opacity: 0.4;
+        z-index: 3;
+        pointer-events: auto;
+    }
+
+    .carousel-item.pos-left-2 {
+        transform: translateX(-380px) scale(0.7) rotateY(20deg);
+        opacity: 0.4;
+        z-index: 3;
+        pointer-events: auto;
+    }
+
+    .carousel-caption-name {
+        font-size: 0.7rem;
+    }
+
+    .carousel-caption-title {
+        font-size: 1.3rem;
+    }
+
+}
+
+/* ---------- lg: 768px ---------- */
+@media (min-width: 768px) {
+
+    .carousel {
+        height: 440px;
+    }
+
+    .carousel-item {
+        width: 330px;
+        height: 410px;
+    }
+
+    .carousel-item.pos-right-1 {
+        transform: translateX(260px) scale(0.87) rotateY(-14deg);
+        opacity: 0.85;
+    }
+
+    .carousel-item.pos-left-1 {
+        transform: translateX(-260px) scale(0.87) rotateY(14deg);
+        opacity: 0.85;
+    }
+
+    .carousel-item.pos-right-2 {
+        transform: translateX(450px) scale(0.72) rotateY(-20deg);
+        opacity: 0.5;
+    }
+
+    .carousel-item.pos-left-2 {
+        transform: translateX(-450px) scale(0.72) rotateY(20deg);
+        opacity: 0.5;
+    }
+
+}
+
+/* ---------- xl: 1024px ---------- */
+@media (min-width: 1024px) {
+    /* Carrusel desktop */
+    .carousel {
+        height: 500px;
+        perspective: 1500px;
+    }
+
+    .carousel-item {
+        width: 370px;
+        height: 450px;
+        border-radius: 18px;
+    }
+
+    .carousel-item.pos-right-1 {
+        transform: translateX(290px) scale(0.88) rotateY(-15deg);
+        opacity: 0.85;
+    }
+
+    .carousel-item.pos-left-1 {
+        transform: translateX(-290px) scale(0.88) rotateY(15deg);
+        opacity: 0.85;
+    }
+
+    .carousel-item.pos-right-2 {
+        transform: translateX(520px) scale(0.75) rotateY(-22deg);
+        opacity: 0.55;
+    }
+
+    .carousel-item.pos-left-2 {
+        transform: translateX(-520px) scale(0.75) rotateY(22deg);
+        opacity: 0.55;
+    }
+
+    .carousel-item.pos-right-3 {
+        transform: translateX(690px) scale(0.65) rotateY(-28deg);
+        z-index: 2;
+        opacity: 0.25;
+        pointer-events: auto;
+    }
+
+    .carousel-item.pos-left-3 {
+        transform: translateX(-690px) scale(0.65) rotateY(28deg);
+        z-index: 2;
+        opacity: 0.25;
+        pointer-events: auto;
+    }
+
+    .carousel-caption-name {
+        font-size: 0.75rem;
+    }
+
+    .carousel-caption-title {
+        font-size: 1.5rem;
+    }
+
+    .carousel-caption {
+        bottom: 1.5rem;
+        left: 1.5rem;
+        right: 1.5rem;
+    }
+
+}
+
+/* ---------- 2xl: 1280px ---------- */
+@media (min-width: 1280px) {
+    .carousel {
+        height: 520px;
+    }
+
+    .carousel-item {
+        width: 380px;
+        height: 460px;
+    }
+
+    .carousel-item.pos-right-1 {
+        transform: translateX(300px) scale(0.88) rotateY(-15deg);
+    }
+
+    .carousel-item.pos-left-1 {
+        transform: translateX(-300px) scale(0.88) rotateY(15deg);
+    }
+
+    .carousel-item.pos-right-2 {
+        transform: translateX(540px) scale(0.75) rotateY(-22deg);
+    }
+
+    .carousel-item.pos-left-2 {
+        transform: translateX(-540px) scale(0.75) rotateY(22deg);
+    }
+
+    .carousel-item.pos-right-3 {
+        transform: translateX(720px) scale(0.65) rotateY(-28deg);
+    }
+
+    .carousel-item.pos-left-3 {
+        transform: translateX(-720px) scale(0.65) rotateY(28deg);
+    }
+}

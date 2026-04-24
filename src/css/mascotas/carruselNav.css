@@ -1,0 +1,104 @@
+/* ============================================
+   CARRUSEL NAV
+   ============================================ */
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.carousel-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--font-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.carousel-btn:hover {
+    background: var(--font-color);
+    color: var(--bkgd);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--line);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+}
+
+.dot.active {
+    background: var(--accent);
+    width: 22px;
+    border-radius: 3px;
+}
+
+/* ============================================
+   BREAKPOINTS — Mobile first (min-width)
+   
+   sm  → 480px   (móviles grandes)
+   md  → 640px   (tablets pequeñas)
+   lg  → 768px   (tablets)
+   xl  → 1024px  (desktop)
+   2xl → 1280px  (desktop grande)
+   3xl → 1536px  (pantallas amplias)
+   ============================================ */
+
+/* ---------- lg: 768px ---------- */
+@media (min-width: 768px) {
+
+    .carousel-btn {
+        width: 46px;
+        height: 46px;
+        font-size: 1.05rem;
+    }
+
+    .carousel-dots {
+        gap: 0.45rem;
+        padding: 0 0.75rem;
+    }
+}
+
+/* ---------- xl: 1024px ---------- */
+@media (min-width: 1024px) {
+
+    .carousel-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 1.1rem;
+    }
+
+    .carousel-dots {
+        gap: 0.5rem;
+        padding: 0 1rem;
+    }
+
+    .carousel-nav {
+        gap: 1rem;
+        margin-top: 2.5rem;
+    }
+
+}

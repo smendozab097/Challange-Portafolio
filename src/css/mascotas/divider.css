@@ -1,0 +1,13 @@
+/* ============================================
+   DIVIDER
+   ============================================ */
+.divider {
+    max-width: var(--section-max-width);
+    margin: 1.5rem auto;
+    padding: 0 var(--section-padding-x);
+}
+
+.divider-line {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--line), transparent);
+}

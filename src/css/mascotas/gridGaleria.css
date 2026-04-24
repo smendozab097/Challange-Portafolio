@@ -1,0 +1,194 @@
+/* ============================================
+   Grid Galeria — Mobile first (2 columna)
+   ============================================ */
+.gallery {
+    max-width: var(--section-max-width);
+    margin: 0 auto;
+    padding: 0 var(--section-padding-x);
+    display: grid;
+    /* grid-template-columns: 1fr; */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+.photo-card {
+    background: var(--card);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition:
+        transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+        box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+        opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+}
+
+/* CSS-only filter */
+.gallery-section:has(#filter-kikin:checked) .photo-card:not([data-pet="kikin"]),
+.gallery-section:has(#filter-luke:checked) .photo-card:not([data-pet="luke"]),
+.gallery-section:has(#filter-titi:checked) .photo-card:not([data-pet="titi"]),
+.gallery-section:has(#filter-bingo:checked) .photo-card:not([data-pet="bingo"]) {
+    display: none;
+}
+
+.photo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+.photo-media {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--bkgd-soft);
+}
+
+.photo-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.photo-card:hover .photo-media img {
+    transform: scale(1.04);
+}
+
+.photo-tag {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.85rem;
+    background: none;
+    /* background: rgba(255, 251, 245, 0.5); */
+    backdrop-filter: blur(8px);
+    border-radius: 100px;
+    padding: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-items:center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--font-color);
+    letter-spacing: 0.02em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.photo-tag-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    /* background: var(--bkgd-soft); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.photo-tag-icon img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.photo-info {
+    padding: 1.1rem 1.15rem 1.25rem;
+    /* text-align: justify; */
+}
+
+.photo-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
+    color: var(--font-color);
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+}
+
+.photo-desc {
+    font-size: 0.85rem;
+    color: var(--font-color-soft);
+    line-height: 1.55;
+    font-weight: 400;
+}
+
+/* ============================================
+   BREAKPOINTS — Mobile first (min-width)
+   
+   sm  → 480px   (móviles grandes)
+   md  → 640px   (tablets pequeñas)
+   lg  → 768px   (tablets)
+   xl  → 1024px  (desktop)
+   2xl → 1280px  (desktop grande)
+   3xl → 1536px  (pantallas amplias)
+   ============================================ */
+
+/* ---------- md: 640px ---------- */
+@media (min-width: 640px) {
+
+    .photo-info {
+        padding: 1.2rem 1.25rem 1.4rem;
+    }
+
+    .photo-title {
+        font-size: 1.15rem;
+    }
+
+    .photo-desc {
+        font-size: 0.87rem;
+    }
+
+}
+
+/* ---------- lg: 768px ---------- */
+@media (min-width: 768px) {
+
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+}
+
+/* ---------- xl: 1024px ---------- */
+@media (min-width: 1024px) {
+    /* Gallery desktop */
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.75rem;
+    }
+
+    .photo-tag {
+        top: 1rem;
+        left: 1rem;
+        padding: 0.4rem;
+        gap: 0.45rem;
+        font-size: 0.78rem;
+    }
+
+    .photo-tag-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .photo-tag-icon img {
+        width: 90%;
+        height: 90%;
+    }
+
+    .photo-info {
+        padding: 1.25rem 1.35rem 1.5rem;
+    }
+
+    .photo-title {
+        font-size: 1.2rem;
+    }
+
+    .photo-desc {
+        font-size: 0.88rem;
+    }
+
+}
